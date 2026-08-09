@@ -169,7 +169,7 @@
   .hero::after{
     content:"";
     position:absolute; inset:0; z-index:1;
-    background:linear-gradient(180deg, rgba(38,33,28,0.12) 0%, rgba(38,33,28,0.7) 100%);
+    background:linear-gradient(180deg, rgba(38,33,28,0.02) 0%, rgba(38,33,28,0.08) 45%, rgba(38,33,28,0.5) 100%);
   }
   .hero-inner{
     position:relative; z-index:2;
@@ -353,7 +353,7 @@
   .carousel-slide img{ width:100%; height:100%; object-fit:cover; }
   .carousel-card::before{
     content:""; position:absolute; inset:0; z-index:1;
-    background:linear-gradient(180deg, rgba(38,33,28,0.05) 40%, rgba(38,33,28,0.72) 100%);
+    background:linear-gradient(180deg, rgba(38,33,28,0.02) 55%, rgba(38,33,28,0.55) 100%);
   }
   .carousel-overlay{
     position:absolute; left:0; right:0; bottom:0; z-index:2;
@@ -421,13 +421,13 @@
     content:"";
     position:absolute; inset:0; z-index:1;
     background:
-      repeating-linear-gradient(90deg, rgba(251,249,244,0.06) 0 1px, transparent 1px 40px),
-      repeating-linear-gradient(0deg, rgba(251,249,244,0.06) 0 1px, transparent 1px 40px),
-      linear-gradient(180deg, rgba(38,33,28,0.15), rgba(38,33,28,0.4));
+      repeating-linear-gradient(90deg, rgba(251,249,244,0.05) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(0deg, rgba(251,249,244,0.05) 0 1px, transparent 1px 40px);
   }
   .story-media .corner{
     position:absolute; width:16px; height:16px; z-index:2;
     border-color:rgba(251,249,244,0.75);
+    filter:drop-shadow(0 0 2px rgba(38,33,28,0.6));
   }
   .story-media .corner.tl{ top:14px; left:14px; border-top:1px solid; border-left:1px solid; }
   .story-media .corner.tr{ top:14px; right:14px; border-top:1px solid; border-right:1px solid; }
