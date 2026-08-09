@@ -412,13 +412,21 @@
   .story-media{
     position:relative;
     min-height:360px; border-radius:2px; overflow:hidden;
+    background:var(--wood-dark);
+  }
+  .story-media .story-photo{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
+  }
+  .story-media::before{
+    content:"";
+    position:absolute; inset:0; z-index:1;
     background:
-      repeating-linear-gradient(90deg, rgba(251,249,244,0.07) 0 1px, transparent 1px 40px),
-      repeating-linear-gradient(0deg, rgba(251,249,244,0.07) 0 1px, transparent 1px 40px),
-      repeating-linear-gradient(75deg,#B08256,#9C6E43 4px,#7C5636 8px);
+      repeating-linear-gradient(90deg, rgba(251,249,244,0.06) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(0deg, rgba(251,249,244,0.06) 0 1px, transparent 1px 40px),
+      linear-gradient(180deg, rgba(38,33,28,0.15), rgba(38,33,28,0.4));
   }
   .story-media .corner{
-    position:absolute; width:16px; height:16px;
+    position:absolute; width:16px; height:16px; z-index:2;
     border-color:rgba(251,249,244,0.75);
   }
   .story-media .corner.tl{ top:14px; left:14px; border-top:1px solid; border-left:1px solid; }
@@ -426,7 +434,7 @@
   .story-media .corner.bl{ bottom:14px; left:14px; border-bottom:1px solid; border-left:1px solid; }
   .story-media .corner.br{ bottom:14px; right:14px; border-bottom:1px solid; border-right:1px solid; }
 
-  .spec-marker{ position:absolute; }
+  .spec-marker{ position:absolute; z-index:2; }
   .spec-dot{
     width:6px; height:6px; border-radius:50%; background:var(--paper);
     box-shadow:0 0 0 4px rgba(251,249,244,0.22);
@@ -620,10 +628,8 @@
 <section class="hero">
   <div class="hero-slides" id="heroSlides">
     <div class="hero-slide active"><img src="images/hero-01.jpg" alt="White rattan double-basin wall-mounted bathroom vanity"></div>
-    <!-- More slides coming — once photos 2 and 3 are ready, add them here:
-    <div class="hero-slide"><img src="images/hero-02.jpg" alt="..."></div>
-    <div class="hero-slide"><img src="images/hero-03.jpg" alt="..."></div>
-    and add matching dot buttons below in .hero-dots -->
+    <div class="hero-slide"><img src="images/hero-02.jpg" alt="Gray-tone double-mirror bathroom vanity"></div>
+    <div class="hero-slide"><img src="images/hero-03.jpg" alt="Warm-tone bathroom vanity with long mirror and pendant lights"></div>
   </div>
   <div class="hero-controls" id="heroControls">
     <button class="hero-arrow" onclick="heroMove(-1)" aria-label="Previous">
@@ -635,6 +641,8 @@
   </div>
   <div class="hero-dots" id="heroDots">
     <button class="hero-dot active" onclick="heroGoTo(0)" aria-label="Slide 1"></button>
+    <button class="hero-dot" onclick="heroGoTo(1)" aria-label="Slide 2"></button>
+    <button class="hero-dot" onclick="heroGoTo(2)" aria-label="Slide 3"></button>
   </div>
   <div class="wrap hero-inner">
     <div class="hero-eyebrow">
@@ -704,6 +712,8 @@
       <div class="carousel-track">
         <div class="carousel-slide active"><img src="images/hero-banner.jpg" alt="Fluted oak bathroom vanity"></div>
         <div class="carousel-slide"><img src="images/vanity-01.jpg" alt="Rattan wall-mounted bathroom vanity"></div>
+        <div class="carousel-slide"><img src="images/collection-02.jpg" alt="Woven cane double-basin bathroom vanity"></div>
+        <div class="carousel-slide"><img src="images/collection-03.jpg" alt="Round pedestal bathroom vanities with mirrors"></div>
       </div>
       <div class="carousel-controls">
         <button class="carousel-arrow" onclick="carouselMove(-1)" aria-label="Previous">
@@ -716,6 +726,8 @@
       <div class="carousel-dots">
         <button class="carousel-dot active" onclick="carouselGoTo(0)" aria-label="Slide 1"></button>
         <button class="carousel-dot" onclick="carouselGoTo(1)" aria-label="Slide 2"></button>
+        <button class="carousel-dot" onclick="carouselGoTo(2)" aria-label="Slide 3"></button>
+        <button class="carousel-dot" onclick="carouselGoTo(3)" aria-label="Slide 4"></button>
       </div>
       <div class="carousel-overlay">
         <div class="tag"><span data-en>Available Now</span><span data-zh>现已上线</span></div>
@@ -741,6 +753,7 @@
 
     <div class="story-row reveal">
       <div class="story-media">
+        <img class="story-photo" src="images/craft-01.jpg" alt="Close-up of mortise and tenon joinery on oak vanity frame">
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <div class="spec-marker" style="top:28%; left:12%;">
           <div class="spec-dot"></div>
@@ -766,6 +779,7 @@
 
     <div class="story-row reverse reveal">
       <div class="story-media">
+        <img class="story-photo" src="images/craft-02.jpg" alt="Close-up of fluted oak panel edge detail">
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <div class="spec-marker" style="top:20%; right:14%;">
           <div class="spec-dot"></div>
@@ -791,6 +805,7 @@
 
     <div class="story-row reveal">
       <div class="story-media">
+        <img class="story-photo" src="images/craft-03.jpg" alt="Stacked carved oak panel components in workshop">
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <div class="spec-marker" style="top:26%; left:14%;">
           <div class="spec-dot"></div>
