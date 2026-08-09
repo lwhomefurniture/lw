@@ -418,11 +418,7 @@
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
   }
   .story-media::before{
-    content:"";
-    position:absolute; inset:0; z-index:1;
-    background:
-      repeating-linear-gradient(90deg, rgba(251,249,244,0.05) 0 1px, transparent 1px 40px),
-      repeating-linear-gradient(0deg, rgba(251,249,244,0.05) 0 1px, transparent 1px 40px);
+    content:none;
   }
   .story-media .corner{
     position:absolute; width:16px; height:16px; z-index:2;
@@ -710,10 +706,10 @@
 
     <div class="carousel-card" id="vanity-carousel">
       <div class="carousel-track">
-        <div class="carousel-slide active"><img src="images/hero-banner.jpg" alt="Fluted oak bathroom vanity"></div>
-        <div class="carousel-slide"><img src="images/vanity-01.jpg" alt="Rattan wall-mounted bathroom vanity"></div>
-        <div class="carousel-slide"><img src="images/collection-02.jpg" alt="Woven cane double-basin bathroom vanity"></div>
+        <div class="carousel-slide active"><img src="images/collection-02.jpg" alt="Woven cane double-basin bathroom vanity"></div>
         <div class="carousel-slide"><img src="images/collection-03.jpg" alt="Round pedestal bathroom vanities with mirrors"></div>
+        <div class="carousel-slide"><img src="images/collection-04.jpg" alt="Double-mirror oak bathroom vanity with fluted drawers"></div>
+        <div class="carousel-slide"><img src="images/collection-05.jpg" alt="Double-mirror oak bathroom vanity with open shelf"></div>
       </div>
       <div class="carousel-controls">
         <button class="carousel-arrow" onclick="carouselMove(-1)" aria-label="Previous">
