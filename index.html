@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LW Home Furniture — Solid Wood Bathroom Vanities</title>
+<script>document.documentElement.classList.add('js-ready');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F1EA;
+    --bg-deep:#EDE6D9;
+    --ink:#26211C;
+    --ink-soft:#5B5348;
+    --wood:#8B5A3C;
+    --wood-dark:#5C3A26;
+    --sage:#6B7860;
+    --line:#DCD5C6;
+    --paper:#FBF9F4;
+
+    --font-display:'Fraunces', serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'Space Grotesk', sans-serif;
+
+    --container: 1240px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img, svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; cursor:pointer; }
+  .wrap{ max-width:var(--container); margin:0 auto; padding:0 40px; }
+  @media (max-width:720px){ .wrap{ padding:0 22px; } }
+
+  /* language toggle logic */
+  [data-zh]{ display:none; }
+  html[data-lang="zh"] [data-en]{ display:none; }
+  html[data-lang="zh"] [data-zh]{ display:inline; }
+  html[data-lang="zh"] [data-zh-block]{ display:block; }
+
+  /* ============ NAV ============ */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(245,241,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-size:22px;
+    letter-spacing:0.5px;
+    font-weight:500;
+    display:flex;
+    align-items:baseline;
+    gap:9px;
+    white-space:nowrap;
+  }
+  .logo .logo-sub{
+    font-family:var(--font-mono);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  @media (max-width:520px){
+    .logo .logo-sub{ display:none; }
+  }
+  .nav-links{
+    display:flex; align-items:center;
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  .nav-item{ position:relative; margin-left:36px; }
+  .nav-item:first-child{ margin-left:0; }
+  .nav-links > a{ opacity:0.78; transition:opacity .2s; margin-left:36px; }
+  .nav-links > a:first-child{ margin-left:0; }
+  .nav-links > a:hover{ opacity:1; }
+  .nav-item > .nav-trigger{
+    opacity:0.78; transition:opacity .2s; cursor:pointer;
+    display:inline-flex; align-items:center; gap:5px; background:none; border:none;
+    font-family:inherit; font-size:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit;
+    padding:0;
+  }
+  .nav-item > .nav-trigger svg{ width:9px; height:9px; transition:transform .2s ease; }
+  .nav-item:hover > .nav-trigger, .nav-item:focus-within > .nav-trigger{ opacity:1; }
+  .nav-item:hover > .nav-trigger svg, .nav-item:focus-within > .nav-trigger svg{ transform:rotate(180deg); }
+
+  .nav-dropdown{
+    position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(6px);
+    background:var(--paper); border:1px solid var(--line); border-radius:6px;
+    min-width:230px; padding:8px; margin-top:14px;
+    box-shadow:0 16px 34px rgba(38,33,28,0.14);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease;
+    text-align:left; z-index:50;
+  }
+  .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown{
+    opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown a{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:11px 12px; border-radius:4px;
+    font-family:var(--font-body); font-size:13.5px; letter-spacing:0; text-transform:none;
+    color:var(--ink); opacity:1; margin-left:0;
+  }
+  .nav-dropdown a:hover{ background:var(--bg-deep); }
+  .nav-dropdown a.disabled{
+    pointer-events:none; color:var(--ink-soft); opacity:0.5;
+  }
+  .nav-dropdown .soon-badge{
+    font-family:var(--font-mono); font-size:9px; letter-spacing:0.04em; text-transform:uppercase;
+    background:var(--bg-deep); color:var(--ink-soft); padding:3px 7px; border-radius:10px; white-space:nowrap;
+  }
+  .lang-toggle{
+    display:flex; align-items:center;
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:0.04em;
+  }
+  .lang-toggle button{
+    background:none; border:1px solid var(--line);
+    padding:5px 10px; border-radius:20px;
+    color:var(--ink-soft);
+    transition:all .2s;
+    margin-left:8px;
+  }
+  .lang-toggle button:first-child{ margin-left:0; }
+  .lang-toggle button.active{
+    background:var(--ink); color:var(--paper); border-color:var(--ink);
+  }
+  .nav-mobile-toggle{ display:none; }
+  @media (max-width:900px){
+    .nav-links{ display:none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:clamp(560px, 88vh, 900px);
+    display:flex; align-items:flex-end;
+    background:var(--wood-dark);
+    overflow:hidden;
+  }
+  .hero-slides{ position:absolute; inset:0; z-index:0; }
+  .hero-slide{
+    position:absolute; inset:0;
+    opacity:0; transition:opacity 1.2s ease;
+  }
+  .hero-slide.active{ opacity:1; }
+  .hero-slide img{ width:100%; height:100%; object-fit:cover; }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(38,33,28,0.12) 0%, rgba(38,33,28,0.7) 100%);
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    padding-bottom:72px;
+    color:var(--paper);
+  }
+  .hero-controls{
+    position:absolute; z-index:3; top:50%; left:0; right:0;
+    display:flex; justify-content:space-between;
+    transform:translateY(-50%);
+    padding:0 24px;
+    pointer-events:none;
+  }
+  .hero-arrow{
+    pointer-events:auto;
+    width:42px; height:42px; border-radius:50%;
+    background:rgba(251,249,244,0.16); border:1px solid rgba(251,249,244,0.4);
+    color:var(--paper); display:flex; align-items:center; justify-content:center;
+    backdrop-filter:blur(4px); transition:background .2s ease;
+  }
+  .hero-arrow:hover{ background:rgba(251,249,244,0.3); }
+  .hero-arrow svg{ width:19px; height:19px; }
+  .hero-dots{
+    position:absolute; z-index:3; top:24px; right:24px;
+    display:flex; gap:7px;
+  }
+  .hero-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:rgba(251,249,244,0.4); border:none; padding:0;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .hero-dot.active{ background:var(--paper); transform:scale(1.2); }
+  .hero-eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    opacity:0.85; margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(40px, 6vw, 84px);
+    line-height:1.02;
+    max-width:14ch;
+    letter-spacing:-0.01em;
+  }
+  .hero p{
+    margin-top:22px;
+    max-width:44ch;
+    font-size:17px;
+    opacity:0.92;
+  }
+  .hero-cta{
+    margin-top:34px;
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--paper); color:var(--ink);
+    padding:14px 26px;
+    font-family:var(--font-mono);
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    transition:transform .25s ease, background .25s ease;
+  }
+  .hero-cta:hover{ transform:translateY(-2px); background:#fff; }
+  .hero-cta svg{ width:14px; height:14px; }
+
+  /* ============ CATEGORY STRIP (signature element) ============ */
+  .material-strip{
+    border-bottom:1px solid var(--line);
+    background:var(--paper);
+  }
+  .material-strip .wrap{
+    display:flex; overflow-x:auto;
+  }
+  .swatch{
+    flex:1 0 auto;
+    min-width:200px;
+    padding:26px 26px;
+    border-right:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    cursor:pointer;
+    transition:background .25s ease;
+  }
+  .swatch:last-child{ border-right:none; }
+  .swatch:hover{ background:var(--bg-deep); }
+  .swatch.soon{ cursor:default; }
+  .swatch.soon:hover{ background:none; }
+  .swatch-name{
+    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-size:18px; color:var(--ink);
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .swatch-name .swatch-index{
+    font-family:var(--font-mono); font-style:normal; font-size:11px;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .swatch.soon .swatch-name{ color:var(--ink-soft); opacity:0.7; }
+  .swatch-arrow{
+    width:16px; height:16px; flex:none; color:var(--wood);
+    transition:transform .2s ease;
+  }
+  .swatch:hover .swatch-arrow{ transform:translateX(3px); }
+  .swatch.soon .swatch-arrow{ display:none; }
+  .swatch-soon-badge{
+    font-family:var(--font-mono); font-size:9px; letter-spacing:0.05em; text-transform:uppercase;
+    background:var(--bg-deep); color:var(--ink-soft); padding:3px 8px; border-radius:10px; white-space:nowrap;
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section{ padding:110px 0; }
+  .section-tight{ padding:70px 0; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:52px; gap:24px; flex-wrap:wrap;
+  }
+  .section-eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--wood-dark); margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:400;
+    font-size:clamp(30px, 3.6vw, 46px);
+    max-width:16ch;
+  }
+  .section-head p{
+    max-width:38ch; color:var(--ink-soft); font-size:15px;
+  }
+
+  /* ============ COLLECTIONS GRID ============ */
+  .collections-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    grid-template-rows:auto auto;
+    gap:18px;
+  }
+  .collections-grid .col-big{ grid-row:1 / 3; }
+  .col-card{
+    position:relative;
+    min-height:260px;
+    border-radius:2px;
+    overflow:hidden;
+    display:flex; align-items:flex-end;
+    padding:26px;
+    color:var(--paper);
+  }
+  .col-big{ min-height:560px; }
+  .col-card::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(38,33,28,0.05), rgba(38,33,28,0.7));
+    z-index:1;
+  }
+  .col-card .tag{
+    position:relative; z-index:2;
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em;
+    text-transform:uppercase; opacity:0.9; margin-bottom:6px;
+  }
+  .col-card h3{
+    position:relative; z-index:2;
+    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-size:clamp(22px,2.4vw,32px);
+  }
+  .cc1{ background:repeating-linear-gradient(80deg,#7C5636,#93683F 6px,#6D4630 12px); }
+  .cc2{ background:repeating-linear-gradient(80deg,#8B6142,#A17A42 6px,#5C3A26 12px); }
+  .cc3{ background:repeating-linear-gradient(80deg,#B78E52,#C9A46A 6px,#93683F 12px); }
+  .cc4{ background:repeating-linear-gradient(80deg,#5C3A26,#6D4630 6px,#432A1B 12px); }
+
+  /* ============ COLLECTION CAROUSEL (single featured category) ============ */
+  .carousel-card{
+    position:relative;
+    min-height:520px;
+    min-height:clamp(420px, 62vh, 620px);
+    border-radius:2px;
+    overflow:hidden;
+    background:var(--wood-dark);
+  }
+  .carousel-track{ position:absolute; inset:0; }
+  .carousel-slide{
+    position:absolute; inset:0;
+    opacity:0; transition:opacity 1s ease;
+  }
+  .carousel-slide.active{ opacity:1; }
+  .carousel-slide img{ width:100%; height:100%; object-fit:cover; }
+  .carousel-card::before{
+    content:""; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(38,33,28,0.05) 40%, rgba(38,33,28,0.72) 100%);
+  }
+  .carousel-overlay{
+    position:absolute; left:0; right:0; bottom:0; z-index:2;
+    padding:36px;
+    color:var(--paper);
+  }
+  .carousel-overlay .tag{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em;
+    text-transform:uppercase; opacity:0.9; margin-bottom:8px;
+  }
+  .carousel-overlay h3{
+    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-size:clamp(28px,3.4vw,44px); margin-bottom:16px;
+  }
+  .carousel-cta{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--font-mono); font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    border-bottom:1px solid var(--paper); padding-bottom:5px;
+  }
+  .carousel-controls{
+    position:absolute; z-index:3; top:50%; left:0; right:0;
+    display:flex; justify-content:space-between;
+    transform:translateY(-50%);
+    padding:0 20px;
+    pointer-events:none;
+  }
+  .carousel-arrow{
+    pointer-events:auto;
+    width:40px; height:40px; border-radius:50%;
+    background:rgba(251,249,244,0.16); border:1px solid rgba(251,249,244,0.4);
+    color:var(--paper); display:flex; align-items:center; justify-content:center;
+    backdrop-filter:blur(4px); transition:background .2s ease;
+  }
+  .carousel-arrow:hover{ background:rgba(251,249,244,0.3); }
+  .carousel-arrow svg{ width:18px; height:18px; }
+  .carousel-dots{
+    position:absolute; z-index:3; top:24px; right:24px;
+    display:flex; gap:7px;
+  }
+  .carousel-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:rgba(251,249,244,0.4); border:none; padding:0;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .carousel-dot.active{ background:var(--paper); transform:scale(1.2); }
+
+  /* ============ CRAFT / STORY (blueprint style) ============ */
+  .story-row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:64px; align-items:center;
+    padding:64px 0;
+    border-top:1px solid var(--line);
+  }
+  .story-row:first-of-type{ border-top:none; }
+  .story-row.reverse .story-media{ order:2; }
+  .story-media{
+    position:relative;
+    min-height:360px; border-radius:2px; overflow:hidden;
+    background:
+      repeating-linear-gradient(90deg, rgba(251,249,244,0.07) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(0deg, rgba(251,249,244,0.07) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(75deg,#B08256,#9C6E43 4px,#7C5636 8px);
+  }
+  .story-media .corner{
+    position:absolute; width:16px; height:16px;
+    border-color:rgba(251,249,244,0.75);
+  }
+  .story-media .corner.tl{ top:14px; left:14px; border-top:1px solid; border-left:1px solid; }
+  .story-media .corner.tr{ top:14px; right:14px; border-top:1px solid; border-right:1px solid; }
+  .story-media .corner.bl{ bottom:14px; left:14px; border-bottom:1px solid; border-left:1px solid; }
+  .story-media .corner.br{ bottom:14px; right:14px; border-bottom:1px solid; border-right:1px solid; }
+
+  .spec-marker{ position:absolute; }
+  .spec-dot{
+    width:6px; height:6px; border-radius:50%; background:var(--paper);
+    box-shadow:0 0 0 4px rgba(251,249,244,0.22);
+    position:absolute;
+  }
+  .spec-line{ position:absolute; background:rgba(251,249,244,0.55); height:1px; transform-origin:0 0; }
+  .spec-label{
+    position:absolute;
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--paper); background:rgba(38,33,28,0.6);
+    padding:4px 9px; border-radius:2px; white-space:nowrap;
+    border:1px solid rgba(251,249,244,0.25);
+  }
+
+  .story-num{
+    font-family:var(--font-mono); font-size:13px; color:var(--wood);
+    letter-spacing:0.08em; margin-bottom:16px;
+  }
+  .story-text h3{
+    font-family:var(--font-display); font-weight:400; font-style:italic;
+    font-size:clamp(24px,2.6vw,34px); margin-bottom:16px; max-width:16ch;
+  }
+  .story-text p{ color:var(--ink-soft); max-width:42ch; font-size:15.5px; margin-bottom:20px; }
+  .story-stats{
+    display:flex; gap:28px; flex-wrap:wrap;
+    border-top:1px solid var(--line); padding-top:18px;
+  }
+  .story-stats div{ display:flex; flex-direction:column; gap:4px; }
+  .story-stats .stat-value{
+    font-family:var(--font-mono); font-size:19px; color:var(--wood-dark); font-weight:500;
+  }
+  .story-stats .stat-label{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft);
+  }
+
+  /* scroll reveal (progressive enhancement — content visible by default) */
+  .reveal{ opacity:1; }
+  html.js-ready .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  html.js-ready .reveal.in-view{ opacity:1; transform:translateY(0); }
+
+  @media (max-width:800px){
+    .story-row, .story-row.reverse{ grid-template-columns:1fr; }
+    .story-row.reverse .story-media{ order:0; }
+    .spec-label{ font-size:9px; }
+  }
+
+  /* ============ SOCIAL SHOWCASE ============ */
+  .social-section{ padding:100px 0; border-top:1px solid var(--line); }
+  .social-grid{
+    display:grid; grid-template-columns:repeat(6, 1fr); gap:14px; margin-top:44px;
+  }
+  .social-tile{
+    position:relative; aspect-ratio:1/1; border-radius:2px; overflow:hidden;
+    background:repeating-linear-gradient(75deg,#D8C9AE,#C9B995 5px,#BBA97F 10px);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .social-tile::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(38,33,28,0.02), rgba(38,33,28,0.28));
+  }
+  .social-tile .platform-badge{
+    position:absolute; top:9px; right:9px; z-index:2;
+    width:24px; height:24px; border-radius:50%;
+    background:rgba(38,33,28,0.55); backdrop-filter:blur(3px);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--paper);
+  }
+  .social-tile .platform-badge svg{ width:13px; height:13px; }
+  .social-tile .tile-label{
+    position:relative; z-index:2;
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase;
+    color:rgba(251,249,244,0.85); background:rgba(38,33,28,0.4);
+    padding:5px 10px; border-radius:20px;
+  }
+  .social-cta-row{
+    display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;
+  }
+  .social-btn{
+    display:inline-flex; align-items:center; gap:9px;
+    border:1px solid var(--line); padding:11px 20px; border-radius:30px;
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .social-btn:hover{ background:var(--bg-deep); border-color:var(--ink-soft); }
+  .social-btn svg{ width:15px; height:15px; }
+
+  @media (max-width:900px){ .social-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:560px){ .social-grid{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ============ CONTACT STRIP ============ */
+  .contact-strip{
+    background:var(--ink); color:var(--paper);
+    padding:80px 0; text-align:center;
+  }
+  .contact-strip h2{
+    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-size:clamp(28px,3.4vw,44px); margin-bottom:20px;
+  }
+  .contact-strip p{ opacity:0.75; max-width:44ch; margin:0 auto 30px; }
+  .contact-form{
+    display:flex; gap:0; max-width:420px; margin:0 auto;
+    border-bottom:1px solid rgba(251,249,244,0.4);
+  }
+  .contact-form input{
+    flex:1; background:none; border:none; color:var(--paper);
+    padding:12px 4px; font-size:14px; font-family:var(--font-body);
+  }
+  .contact-form input::placeholder{ color:rgba(251,249,244,0.5); }
+  .contact-form button{
+    background:none; border:none; color:var(--paper);
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{ padding:70px 0 34px; }
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:32px; padding-bottom:50px; border-bottom:1px solid var(--line);
+  }
+  .footer-brand .logo{ margin-bottom:14px; }
+  .footer-brand p{ color:var(--ink-soft); font-size:14px; max-width:32ch; }
+  .footer-col h4{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px;
+  }
+  .footer-col a{
+    display:block; font-size:14.5px; margin-bottom:10px; color:var(--ink);
+    opacity:0.85; transition:opacity .2s;
+  }
+  .footer-col a:hover{ opacity:1; }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:28px; font-size:13px; color:var(--ink-soft);
+    flex-wrap:wrap; gap:12px;
+  }
+  @media (max-width:800px){
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--wood); outline-offset:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">LW <span class="logo-sub">Home Furniture</span></div>
+    <div class="nav-links">
+      <div class="nav-item">
+        <button class="nav-trigger">
+          <span data-en>Collections</span><span data-zh>产品系列</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown">
+          <a href="collections/bathroom-vanities.html">
+            <span><span data-en>Bathroom Vanity</span><span data-zh>浴室柜</span></span>
+          </a>
+          <a href="#" class="disabled" tabindex="-1">
+            <span><span data-en>Bedroom Furniture</span><span data-zh>卧室家具</span></span>
+            <span class="soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span>
+          </a>
+          <a href="#" class="disabled" tabindex="-1">
+            <span><span data-en>Living Room Furniture</span><span data-zh>客厅家具</span></span>
+            <span class="soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span>
+          </a>
+          <a href="#" class="disabled" tabindex="-1">
+            <span><span data-en>Sauna</span><span data-zh>桑拿房</span></span>
+            <span class="soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span>
+          </a>
+        </div>
+      </div>
+      <a href="#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
+      <a href="#about"><span data-en>About</span><span data-zh>关于我们</span></a>
+      <a href="#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')">中文</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active"><img src="images/hero-banner.jpg" alt="Modern fluted oak bathroom vanity with organic mirror"></div>
+    <div class="hero-slide"><img src="images/vanity-01.jpg" alt="Rattan wall-mounted bathroom vanity"></div>
+    <!-- Slide 3 placeholder — once the new banner photo is ready, add it here:
+    <div class="hero-slide"><img src="images/hero-banner-3.jpg" alt="..."></div>
+    and add one more dot button below in .hero-dots -->
+  </div>
+  <div class="hero-controls">
+    <button class="hero-arrow" onclick="heroMove(-1)" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="hero-arrow" onclick="heroMove(1)" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" onclick="heroGoTo(0)" aria-label="Slide 1"></button>
+    <button class="hero-dot" onclick="heroGoTo(1)" aria-label="Slide 2"></button>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow">
+      <span data-en>Solid Wood Bathroom Vanities · Est. 2026</span>
+      <span data-zh>实木浴室柜 · 始于 2026</span>
+    </div>
+    <h1>
+      <span data-en>Bathroom vanities built to outlast trends.</span>
+      <span data-zh>经得起时间考验的实木浴室柜。</span>
+    </h1>
+    <p>
+      <span data-en>Handcrafted from solid oak and walnut with water-resistant finishes, our vanities are made to withstand daily use and humidity for years to come.</span>
+      <span data-zh>选用实心橡木与胡桃木手工打造，配合防水表面处理，专为日常高频使用与浴室潮湿环境而生，经久耐用。</span>
+    </p>
+    <a href="#collections" class="hero-cta">
+      <span data-en>Explore Collections</span>
+      <span data-zh>浏览产品系列</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="material-strip">
+  <div class="wrap">
+    <a href="collections/bathroom-vanities.html" class="swatch">
+      <div class="swatch-name">
+        <span class="swatch-index">01</span>
+        <span><span data-en>Bathroom Vanity</span><span data-zh>浴室柜</span></span>
+      </div>
+      <svg class="swatch-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="swatch soon">
+      <div class="swatch-name">
+        <span class="swatch-index">02</span>
+        <span><span data-en>Bedroom Furniture</span><span data-zh>卧室家具</span></span>
+      </div>
+      <span class="swatch-soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span>
+    </div>
+    <div class="swatch soon">
+      <div class="swatch-name">
+        <span class="swatch-index">03</span>
+        <span><span data-en>Living Room Furniture</span><span data-zh>客厅家具</span></span>
+      </div>
+      <span class="swatch-soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span>
+    </div>
+    <div class="swatch soon">
+      <div class="swatch-name">
+        <span class="swatch-index">04</span>
+        <span><span data-en>Sauna</span><span data-zh>桑拿房</span></span>
+      </div>
+      <span class="swatch-soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="collections">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span data-en>Collections</span><span data-zh>产品系列</span></div>
+        <h2><span data-en>Built for every room, one collection at a time.</span><span data-zh>为每个空间打造，系列陆续上线。</span></h2>
+      </div>
+      <p><span data-en>Bathroom vanities are live now. Bedroom, living room, and sauna collections are on the way.</span><span data-zh>浴室柜系列现已上线，卧室、客厅与桑拿房系列即将推出。</span></p>
+    </div>
+
+    <div class="carousel-card" id="vanity-carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide active"><img src="images/hero-banner.jpg" alt="Fluted oak bathroom vanity"></div>
+        <div class="carousel-slide"><img src="images/vanity-01.jpg" alt="Rattan wall-mounted bathroom vanity"></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-arrow" onclick="carouselMove(-1)" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-arrow" onclick="carouselMove(1)" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="carousel-dots">
+        <button class="carousel-dot active" onclick="carouselGoTo(0)" aria-label="Slide 1"></button>
+        <button class="carousel-dot" onclick="carouselGoTo(1)" aria-label="Slide 2"></button>
+      </div>
+      <div class="carousel-overlay">
+        <div class="tag"><span data-en>Available Now</span><span data-zh>现已上线</span></div>
+        <h3><span data-en>Bathroom Vanities</span><span data-zh>浴室柜系列</span></h3>
+        <a href="collections/bathroom-vanities.html" class="carousel-cta">
+          <span data-en>Shop the Collection</span><span data-zh>浏览系列</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="craft">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span data-en>Craft &amp; Quality</span><span data-zh>工艺与质量</span></div>
+        <h2><span data-en>Engineered for the wettest room in the house.</span><span data-zh>专为家中最潮湿的空间而设计。</span></h2>
+      </div>
+      <p><span data-en>Every vanity is built, tested, and sourced to a standard — not just assembled.</span><span data-zh>每一款浴室柜都经过标准化的制造、检测与选材流程 —— 而不只是简单组装。</span></p>
+    </div>
+
+    <div class="story-row reveal">
+      <div class="story-media">
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="spec-marker" style="top:28%; left:12%;">
+          <div class="spec-dot"></div>
+          <div class="spec-line" style="width:64px; transform:rotate(-18deg); top:3px; left:6px;"></div>
+          <div class="spec-label" style="top:-20px; left:70px;">DOVETAIL JOINTS</div>
+        </div>
+        <div class="spec-marker" style="bottom:24%; right:18%;">
+          <div class="spec-dot"></div>
+          <div class="spec-line" style="width:58px; transform:rotate(20deg); top:3px; right:6px; left:auto;"></div>
+          <div class="spec-label" style="top:-6px; right:66px; left:auto;">HAND-SANDED EDGES</div>
+        </div>
+      </div>
+      <div class="story-text">
+        <div class="story-num">01 / 03 — <span data-en>CRAFT</span><span data-zh>工艺</span></div>
+        <h3><span data-en>Joinery over shortcuts</span><span data-zh>接合工艺，拒绝走捷径</span></h3>
+        <p><span data-en>No particleboard, no staples. Cabinet frames use dovetail and mortise-and-tenon joints, hand-sanded and finished before assembly.</span><span data-zh>不用刨花板，不用钉枪。柜体框架采用燕尾榫与榫卯接合工艺，组装前手工打磨与处理表面。</span></p>
+        <div class="story-stats">
+          <div><span class="stat-value">6</span><span class="stat-label"><span data-en>Joinery Points</span><span data-zh>接合工艺点</span></span></div>
+          <div><span class="stat-value">100%</span><span class="stat-label"><span data-en>Hand-Finished</span><span data-zh>手工打磨</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-row reverse reveal">
+      <div class="story-media">
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="spec-marker" style="top:20%; right:14%;">
+          <div class="spec-dot"></div>
+          <div class="spec-line" style="width:70px; transform:rotate(24deg); top:3px; right:6px; left:auto;"></div>
+          <div class="spec-label" style="top:-6px; right:76px; left:auto;">MULTI-POINT QC</div>
+        </div>
+        <div class="spec-marker" style="bottom:26%; left:16%;">
+          <div class="spec-dot"></div>
+          <div class="spec-line" style="width:60px; transform:rotate(-22deg); top:3px; left:6px;"></div>
+          <div class="spec-label" style="top:-20px; left:66px;">72HR MOISTURE TEST</div>
+        </div>
+      </div>
+      <div class="story-text">
+        <div class="story-num">02 / 03 — <span data-en>QUALITY</span><span data-zh>质量</span></div>
+        <h3><span data-en>Tested for daily water exposure</span><span data-zh>专为日常淋湿场景检测</span></h3>
+        <p><span data-en>Every batch goes through a multi-point inspection and a 72-hour moisture exposure test before it leaves the workshop.</span><span data-zh>每一批产品出厂前，都要经过多道质检工序，以及 72 小时防潮测试。</span></p>
+        <div class="story-stats">
+          <div><span class="stat-value">12</span><span class="stat-label"><span data-en>QC Checkpoints</span><span data-zh>质检节点</span></span></div>
+          <div><span class="stat-value">72H</span><span class="stat-label"><span data-en>Moisture Test</span><span data-zh>防潮测试</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-row reveal">
+      <div class="story-media">
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="spec-marker" style="top:26%; left:14%;">
+          <div class="spec-dot"></div>
+          <div class="spec-line" style="width:64px; transform:rotate(-16deg); top:3px; left:6px;"></div>
+          <div class="spec-label" style="top:-20px; left:70px;">FSC-CERTIFIED TIMBER</div>
+        </div>
+        <div class="spec-marker" style="bottom:22%; right:16%;">
+          <div class="spec-dot"></div>
+          <div class="spec-line" style="width:56px; transform:rotate(18deg); top:3px; right:6px; left:auto;"></div>
+          <div class="spec-label" style="top:-6px; right:62px; left:auto;">MOISTURE ≤ 8%</div>
+        </div>
+      </div>
+      <div class="story-text">
+        <div class="story-num">03 / 03 — <span data-en>MATERIAL</span><span data-zh>原材料</span></div>
+        <h3><span data-en>Sourced to a standard, not a price point</span><span data-zh>选材看标准，而非只看价格</span></h3>
+        <p><span data-en>Solid oak and walnut, kiln-dried to below 8% moisture content before it ever reaches the workshop floor.</span><span data-zh>实心橡木与胡桃木，进厂加工前均经过窑干处理，含水率控制在 8% 以下。</span></p>
+        <div class="story-stats">
+          <div><span class="stat-value">≤8%</span><span class="stat-label"><span data-en>Moisture Content</span><span data-zh>含水率</span></span></div>
+          <div><span class="stat-value">FSC</span><span class="stat-label"><span data-en>Certified Timber</span><span data-zh>认证木材</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section social-section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span data-en>Follow Along</span><span data-zh>关注我们</span></div>
+        <h2><span data-en>Workshop notes, on Instagram and TikTok.</span><span data-zh>工坊日常，更新在 Instagram 和 TikTok。</span></h2>
+      </div>
+      <p><span data-en>Behind-the-scenes production, new arrivals, and finished pieces — posted as they happen.</span><span data-zh>生产幕后花絮、新品上架、成品实拍 —— 随时更新。</span></p>
+    </div>
+
+    <div class="social-grid">
+      <div class="social-tile">
+        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div>
+        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
+      </div>
+      <div class="social-tile">
+        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg></div>
+        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
+      </div>
+      <div class="social-tile">
+        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div>
+        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
+      </div>
+      <div class="social-tile">
+        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg></div>
+        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
+      </div>
+      <div class="social-tile">
+        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div>
+        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
+      </div>
+      <div class="social-tile">
+        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg></div>
+        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
+      </div>
+    </div>
+
+    <div class="social-cta-row">
+      <a href="#" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        <span data-en>Follow on Instagram</span><span data-zh>关注 Instagram</span>
+      </a>
+      <a href="#" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg>
+        <span data-en>Follow on TikTok</span><span data-zh>关注 TikTok</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="contact-strip" id="contact">
+  <div class="wrap">
+    <h2><span data-en>Stay close to the workshop.</span><span data-zh>与工坊保持联系。</span></h2>
+    <p><span data-en>New collections, restocks, and studio notes — a few times a year, never more.</span><span data-zh>新系列上架、补货通知与工坊手记 —— 一年数次，绝不打扰。</span></p>
+    <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent = (document.documentElement.dataset.lang==='zh' ? '已订阅' : 'Subscribed');">
+      <input type="email" required placeholder="you@email.com">
+      <button type="submit"><span data-en>Subscribe</span><span data-zh>订阅</span></button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">LW <span class="logo-sub">Home Furniture</span></div>
+        <p><span data-en>Solid wood furniture, handcrafted in small workshops and built to be inherited.</span><span data-zh>实木家具，出自小型工坊的手工制作，为传承而生。</span></p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-en>Collections</span><span data-zh>产品系列</span></h4>
+        <a href="collections/bathroom-vanities.html"><span data-en>Bathroom Vanity</span><span data-zh>浴室柜</span></a>
+        <a href="#" style="opacity:0.5;"><span data-en>Bedroom Furniture (Soon)</span><span data-zh>卧室家具（即将上线）</span></a>
+        <a href="#" style="opacity:0.5;"><span data-en>Living Room Furniture (Soon)</span><span data-zh>客厅家具（即将上线）</span></a>
+        <a href="#" style="opacity:0.5;"><span data-en>Sauna (Soon)</span><span data-zh>桑拿房（即将上线）</span></a>
+      </div>
+      <div class="footer-col">
+        <h4><span data-en>Company</span><span data-zh>公司</span></h4>
+        <a href="#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
+        <a href="#about"><span data-en>About Us</span><span data-zh>关于我们</span></a>
+      </div>
+      <div class="footer-col">
+        <h4><span data-en>Contact</span><span data-zh>联系方式</span></h4>
+        <a href="mailto:hello@lwhomefurniture.com">hello@lwhomefurniture.com</a>
+        <a href="tel:+18005550123">+1 (800) 555-0123</a>
+        <a href="#"><span data-en>Instagram</span><span data-zh>Instagram</span></a>
+        <a href="#"><span data-en>TikTok</span><span data-zh>TikTok</span></a>
+        <a href="#"><span data-en>Facebook</span><span data-zh>Facebook</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 LW Home Furniture. <span data-en>All rights reserved.</span><span data-zh>保留所有权利。</span></div>
+      <div><span data-en>Phone number is a placeholder — update with your real contact</span><span data-zh>电话号码为占位信息 —— 请替换为真实联系方式</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.setAttribute('data-lang', lang);
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  }
+
+  // Hero carousel
+  (function(){
+    var wrap = document.getElementById('heroSlides');
+    if(!wrap) return;
+    var slides = wrap.querySelectorAll('.hero-slide');
+    var dots = document.querySelectorAll('.hero-dot');
+    var current = 0;
+    var timer;
+
+    function show(i){
+      current = (i + slides.length) % slides.length;
+      for(var a=0; a<slides.length; a++){ slides[a].classList.toggle('active', a === current); }
+      for(var b=0; b<dots.length; b++){ dots[b].classList.toggle('active', b === current); }
+    }
+    window.heroMove = function(dir){ show(current + dir); resetTimer(); };
+    window.heroGoTo = function(i){ show(i); resetTimer(); };
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(function(){ show(current + 1); }, 5500);
+    }
+    resetTimer();
+  })();
+
+  // Collections carousel
+  (function(){
+    var track = document.querySelector('#vanity-carousel');
+    if(!track) return;
+    var slides = track.querySelectorAll('.carousel-slide');
+    var dots = track.querySelectorAll('.carousel-dot');
+    var current = 0;
+    var timer;
+
+    function show(i){
+      current = (i + slides.length) % slides.length;
+      for(var a=0; a<slides.length; a++){ slides[a].classList.toggle('active', a === current); }
+      for(var b=0; b<dots.length; b++){ dots[b].classList.toggle('active', b === current); }
+    }
+    window.carouselMove = function(dir){ show(current + dir); resetTimer(); };
+    window.carouselGoTo = function(i){ show(i); resetTimer(); };
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(function(){ show(current + 1); }, 5000);
+    }
+    resetTimer();
+  })();
+
+  // Scroll reveal for craft section
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if(!items.length) return;
+    function markVisible(el){ el.className += ' in-view'; }
+    if(!('IntersectionObserver' in window)){
+      for(var a=0; a<items.length; a++){ markVisible(items[a]); }
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      for(var i=0; i<entries.length; i++){
+        if(entries[i].isIntersecting){ entries[i].target.classList.add('in-view'); }
+      }
+    }, { threshold: 0.15 });
+    for(var c=0; c<items.length; c++){ obs.observe(items[c]); }
+  })();
+</script>
+
+</body>
+</html>
