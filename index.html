@@ -619,13 +619,13 @@
 
 <section class="hero">
   <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide active"><img src="images/hero-banner.jpg" alt="Modern fluted oak bathroom vanity with organic mirror"></div>
-    <div class="hero-slide"><img src="images/vanity-01.jpg" alt="Rattan wall-mounted bathroom vanity"></div>
-    <!-- Slide 3 placeholder — once the new banner photo is ready, add it here:
-    <div class="hero-slide"><img src="images/hero-banner-3.jpg" alt="..."></div>
-    and add one more dot button below in .hero-dots -->
+    <div class="hero-slide active"><img src="images/hero-01.jpg" alt="White rattan double-basin wall-mounted bathroom vanity"></div>
+    <!-- More slides coming — once photos 2 and 3 are ready, add them here:
+    <div class="hero-slide"><img src="images/hero-02.jpg" alt="..."></div>
+    <div class="hero-slide"><img src="images/hero-03.jpg" alt="..."></div>
+    and add matching dot buttons below in .hero-dots -->
   </div>
-  <div class="hero-controls">
+  <div class="hero-controls" id="heroControls">
     <button class="hero-arrow" onclick="heroMove(-1)" aria-label="Previous">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
@@ -635,7 +635,6 @@
   </div>
   <div class="hero-dots" id="heroDots">
     <button class="hero-dot active" onclick="heroGoTo(0)" aria-label="Slide 1"></button>
-    <button class="hero-dot" onclick="heroGoTo(1)" aria-label="Slide 2"></button>
   </div>
   <div class="wrap hero-inner">
     <div class="hero-eyebrow">
@@ -928,6 +927,14 @@
     var dots = document.querySelectorAll('.hero-dot');
     var current = 0;
     var timer;
+
+    if(slides.length <= 1){
+      var controls = document.getElementById('heroControls');
+      var dotsWrap = document.getElementById('heroDots');
+      if(controls){ controls.style.display = 'none'; }
+      if(dotsWrap){ dotsWrap.style.display = 'none'; }
+      return;
+    }
 
     function show(i){
       current = (i + slides.length) % slides.length;
