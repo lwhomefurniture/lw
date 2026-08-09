@@ -159,10 +159,13 @@
     background:var(--wood-dark);
     overflow:hidden;
   }
-  .hero-bg{
-    position:absolute; inset:0; z-index:0;
-    width:100%; height:100%; object-fit:cover;
+  .hero-slides{ position:absolute; inset:0; z-index:0; }
+  .hero-slide{
+    position:absolute; inset:0;
+    opacity:0; transition:opacity 1.2s ease;
   }
+  .hero-slide.active{ opacity:1; }
+  .hero-slide img{ width:100%; height:100%; object-fit:cover; }
   .hero::after{
     content:"";
     position:absolute; inset:0; z-index:1;
@@ -173,6 +176,32 @@
     padding-bottom:72px;
     color:var(--paper);
   }
+  .hero-controls{
+    position:absolute; z-index:3; top:50%; left:0; right:0;
+    display:flex; justify-content:space-between;
+    transform:translateY(-50%);
+    padding:0 24px;
+    pointer-events:none;
+  }
+  .hero-arrow{
+    pointer-events:auto;
+    width:42px; height:42px; border-radius:50%;
+    background:rgba(251,249,244,0.16); border:1px solid rgba(251,249,244,0.4);
+    color:var(--paper); display:flex; align-items:center; justify-content:center;
+    backdrop-filter:blur(4px); transition:background .2s ease;
+  }
+  .hero-arrow:hover{ background:rgba(251,249,244,0.3); }
+  .hero-arrow svg{ width:19px; height:19px; }
+  .hero-dots{
+    position:absolute; z-index:3; top:24px; right:24px;
+    display:flex; gap:7px;
+  }
+  .hero-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:rgba(251,249,244,0.4); border:none; padding:0;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .hero-dot.active{ background:var(--paper); transform:scale(1.2); }
   .hero-eyebrow{
     font-family:var(--font-mono);
     font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
@@ -589,7 +618,25 @@
 </header>
 
 <section class="hero">
-  <img src="images/hero-banner.jpg" alt="Modern fluted oak bathroom vanity with organic mirror" class="hero-bg">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active"><img src="images/hero-banner.jpg" alt="Modern fluted oak bathroom vanity with organic mirror"></div>
+    <div class="hero-slide"><img src="images/vanity-01.jpg" alt="Rattan wall-mounted bathroom vanity"></div>
+    <!-- Slide 3 placeholder — once the new banner photo is ready, add it here:
+    <div class="hero-slide"><img src="images/hero-banner-3.jpg" alt="..."></div>
+    and add one more dot button below in .hero-dots -->
+  </div>
+  <div class="hero-controls">
+    <button class="hero-arrow" onclick="heroMove(-1)" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="hero-arrow" onclick="heroMove(1)" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" onclick="heroGoTo(0)" aria-label="Slide 1"></button>
+    <button class="hero-dot" onclick="heroGoTo(1)" aria-label="Slide 2"></button>
+  </div>
   <div class="wrap hero-inner">
     <div class="hero-eyebrow">
       <span data-en>Solid Wood Bathroom Vanities · Est. 2026</span>
@@ -872,6 +919,29 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
   }
+
+  // Hero carousel
+  (function(){
+    var wrap = document.getElementById('heroSlides');
+    if(!wrap) return;
+    var slides = wrap.querySelectorAll('.hero-slide');
+    var dots = document.querySelectorAll('.hero-dot');
+    var current = 0;
+    var timer;
+
+    function show(i){
+      current = (i + slides.length) % slides.length;
+      for(var a=0; a<slides.length; a++){ slides[a].classList.toggle('active', a === current); }
+      for(var b=0; b<dots.length; b++){ dots[b].classList.toggle('active', b === current); }
+    }
+    window.heroMove = function(dir){ show(current + dir); resetTimer(); };
+    window.heroGoTo = function(i){ show(i); resetTimer(); };
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(function(){ show(current + 1); }, 5500);
+    }
+    resetTimer();
+  })();
 
   // Collections carousel
   (function(){
