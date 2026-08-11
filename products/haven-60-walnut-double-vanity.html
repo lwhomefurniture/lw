@@ -245,6 +245,57 @@
     .sticky-product-inner{ gap:9px; }
   }
 
+
+  /* ============ MOBILE NAVIGATION ============ */
+  .mobile-menu-btn{
+    display:none;
+    width:38px; height:38px;
+    align-items:center; justify-content:center;
+    border:1px solid var(--line);
+    border-radius:50%;
+    background:var(--paper);
+    color:var(--ink);
+    cursor:pointer;
+    flex:none;
+  }
+  .mobile-menu-btn svg{ width:18px; height:18px; }
+  .mobile-menu{
+    display:none;
+    position:fixed;
+    top:76px; left:0; right:0;
+    z-index:120;
+    background:rgba(251,249,244,.985);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 16px 28px rgba(38,33,28,.12);
+    padding:10px 20px 18px;
+  }
+  .mobile-menu.open{ display:block; }
+  .mobile-menu a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 4px;
+    border-bottom:1px solid var(--line);
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .mobile-menu a:last-child{ border-bottom:none; }
+  .mobile-menu .mobile-sub{
+    color:var(--ink-soft);
+    font-family:var(--font-body);
+    font-size:12px;
+    letter-spacing:0;
+    text-transform:none;
+  }
+  @media (max-width:900px){
+    .mobile-menu-btn{ display:inline-flex; }
+    nav.wrap{ gap:12px; }
+    .lang-toggle{ margin-left:auto; }
+  }
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Haven Double Vanity", "description": "A 60-inch freestanding double-sink bathroom vanity in a warm walnut finish with black hardware.", "url": "https://www.lwhomefurniture.com/products/haven-60-walnut-double-vanity.html", "brand": {"@type": "Brand", "name": "LW Home Furniture"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "618", "availability": "https://schema.org/InStock"}}</script>
 </head>
@@ -270,12 +321,29 @@
       <a href="../index.html#about"><span data-en>About</span><span data-zh>关于我们</span></a>
       <a href="../index.html#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
     </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+
     <div class="lang-toggle" role="group" aria-label="Language toggle">
       <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
       <button id="btn-zh" onclick="setLang('zh')">中文</button>
     </div>
   </nav>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html"><span data-en>Home</span><span data-zh>首页</span><span class="mobile-sub">LW Home</span></a>
+  <a href="../collections/bathroom-vanities.html"><span data-en>Bathroom Vanities</span><span data-zh>浴室柜</span><span class="mobile-sub">Collection</span></a>
+  <a href="../bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span><span class="mobile-sub">For Trade</span></a>
+  <a href="../wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span><span class="mobile-sub">B2B</span></a>
+  <a href="../index.html#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
+  <a href="../index.html#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
+</div>
+
 
 <div class="sticky-product-bar" id="stickyProductBar" aria-hidden="true">
   <div class="sticky-product-inner">
@@ -663,6 +731,35 @@
 
   renderProduct();
   updateStickyProductBar();
+
+function toggleMobileMenu(){
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('mobileMenuBtn');
+  if(!menu || !btn) return;
+  var open = !menu.classList.contains('open');
+  menu.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+document.addEventListener('click', function(e){
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('mobileMenuBtn');
+  if(!menu || !btn || !menu.classList.contains('open')) return;
+  if(!menu.contains(e.target) && !btn.contains(e.target)){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Open menu');
+  }
+});
+window.addEventListener('resize', function(){
+  if(window.innerWidth > 900){
+    var menu = document.getElementById('mobileMenu');
+    var btn = document.getElementById('mobileMenuBtn');
+    if(menu) menu.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  }
+});
+
 </script>
 
 </body>
