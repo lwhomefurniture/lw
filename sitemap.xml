@@ -66,11 +66,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lwhomefurniture.com/products/model-12-72-walnut-double-vanity.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.lwhomefurniture.com/products/heritage-72-teak-double-vanity.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -84,5 +79,40 @@
     <loc>https://www.lwhomefurniture.com/wholesale-bathroom-vanities.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/aurelia-84-oak-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/verona-grand-84-oak-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/solenne-84-oak-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/arcadia-72-walnut-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/noir-frame-48-black-floating-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/riva-72-walnut-floating-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/elara-60-teak-floating-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
