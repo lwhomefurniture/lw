@@ -154,6 +154,42 @@
 
   a:focus-visible, button:focus-visible{ outline:2px solid var(--wood); outline-offset:2px; }
   @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
+
+  /* ============ COLLAPSING FILTER BAR ============ */
+  .filter-sidebar{ position:static; }
+  .filter-topbar{
+    position:fixed; left:0; right:0; top:76px; z-index:95;
+    background:rgba(251,249,244,.97); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transform:translateY(-120%); opacity:0; pointer-events:none;
+    transition:transform .22s ease, opacity .18s ease;
+  }
+  .filter-topbar.visible{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .filter-topbar-inner{
+    max-width:var(--container); margin:0 auto; padding:10px 40px;
+    display:flex; align-items:center; gap:18px; min-height:58px; overflow-x:auto;
+  }
+  .topfilter-group{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
+  .topfilter-title{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--ink-soft); margin-right:2px;
+  }
+  .topfilter-pill{
+    display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line);
+    background:var(--paper); border-radius:22px; padding:6px 10px; font-size:12px; cursor:pointer;
+  }
+  .topfilter-pill input{ accent-color:var(--wood); width:13px; height:13px; }
+  .topfilter-divider{ width:1px; height:26px; background:var(--line); flex:none; }
+  .topfilter-reset{
+    margin-left:auto; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em;
+    text-transform:uppercase; color:var(--wood); border:none; background:none; white-space:nowrap;
+  }
+  @media (max-width:720px){
+    .filter-topbar-inner{ padding:8px 20px; gap:12px; }
+    .topfilter-title{ display:none; }
+    .topfilter-pill{ padding:6px 9px; }
+  }
+
 </style>
 </head>
 <body>
@@ -184,6 +220,33 @@
     </div>
   </nav>
 </header>
+
+<div class="filter-topbar" id="filterTopbar" aria-hidden="true">
+  <div class="filter-topbar-inner">
+    <div class="topfilter-group">
+      <span class="topfilter-title"><span data-en>Size</span><span data-zh>尺寸</span></span>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="24">24&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="30">30&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="36">36&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="48">48&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="60">60&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="72">72&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="84">84&quot;</label>
+    </div>
+    <span class="topfilter-divider"></span>
+    <div class="topfilter-group">
+      <span class="topfilter-title"><span data-en>Color</span><span data-zh>颜色</span></span>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="oak"><span data-en>Oak</span><span data-zh>橡木</span></label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="walnut"><span data-en>Walnut</span><span data-zh>胡桃木</span></label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="teak"><span data-en>Teak</span><span data-zh>柚木</span></label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="ash"><span data-en>Ash</span><span data-zh>白蜡木</span></label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="white"><span data-en>White</span><span data-zh>白色</span></label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="black"><span data-en>Black</span><span data-zh>黑色</span></label>
+    </div>
+    <button class="topfilter-reset" id="topResetFilters"><span data-en>Clear</span><span data-zh>清除</span></button>
+  </div>
+</div>
+
 
 <section class="page-hero">
   <div class="wrap">
@@ -433,6 +496,17 @@
     var cards = document.querySelectorAll('.product-card');
     var resultCount = document.getElementById('resultCount');
     var emptyState = document.getElementById('emptyState');
+    var topSizeChecks = document.querySelectorAll('.tf-size');
+    var topColorChecks = document.querySelectorAll('.tf-color');
+
+    function syncFilters(sourceList, targetList){
+      for(var i=0; i<sourceList.length; i++){
+        for(var j=0; j<targetList.length; j++){
+          if(sourceList[i].value === targetList[j].value){ targetList[j].checked = sourceList[i].checked; }
+        }
+      }
+    }
+
     var grid = document.getElementById('productGrid');
 
     function getChecked(list){
@@ -461,12 +535,48 @@
     for(var a=0; a<sizeChecks.length; a++){ sizeChecks[a].addEventListener('change', applyFilters); }
     for(var b=0; b<colorChecks.length; b++){ colorChecks[b].addEventListener('change', applyFilters); }
 
+    for(var c=0; c<sizeChecks.length; c++){
+      sizeChecks[c].addEventListener('change', function(){ syncFilters(sizeChecks, topSizeChecks); });
+    }
+    for(var d=0; d<colorChecks.length; d++){
+      colorChecks[d].addEventListener('change', function(){ syncFilters(colorChecks, topColorChecks); });
+    }
+    for(var e=0; e<topSizeChecks.length; e++){
+      topSizeChecks[e].addEventListener('change', function(){ syncFilters(topSizeChecks, sizeChecks); applyFilters(); });
+    }
+    for(var f=0; f<topColorChecks.length; f++){
+      topColorChecks[f].addEventListener('change', function(){ syncFilters(topColorChecks, colorChecks); applyFilters(); });
+    }
+
+
     document.getElementById('resetFilters').addEventListener('click', function(e){
       e.preventDefault();
       for(var a=0; a<sizeChecks.length; a++){ sizeChecks[a].checked = false; }
       for(var b=0; b<colorChecks.length; b++){ colorChecks[b].checked = false; }
+      syncFilters(sizeChecks, topSizeChecks);
+      syncFilters(colorChecks, topColorChecks);
       applyFilters();
     });
+
+    document.getElementById('topResetFilters').addEventListener('click', function(){
+      for(var a=0; a<sizeChecks.length; a++){ sizeChecks[a].checked = false; }
+      for(var b=0; b<colorChecks.length; b++){ colorChecks[b].checked = false; }
+      syncFilters(sizeChecks, topSizeChecks);
+      syncFilters(colorChecks, topColorChecks);
+      applyFilters();
+    });
+
+    function updateFilterTopbar(){
+      var bar = document.getElementById('filterTopbar');
+      var sidebar = document.querySelector('.filter-sidebar');
+      if(!bar || !sidebar) return;
+      var show = sidebar.getBoundingClientRect().bottom <= 76;
+      bar.classList.toggle('visible', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+    window.addEventListener('scroll', updateFilterTopbar, {passive:true});
+    window.addEventListener('resize', updateFilterTopbar);
+    updateFilterTopbar();
   })();
 </script>
 
