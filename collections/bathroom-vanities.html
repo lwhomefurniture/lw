@@ -155,36 +155,74 @@
   a:focus-visible, button:focus-visible{ outline:2px solid var(--wood); outline-offset:2px; }
   @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
 
-  /* ============ COLLAPSING FILTER BAR ============ */
-  .filter-sidebar{ position:static; }
+  /* ============ COLLAPSING FILTER BAR v2 ============ */
+  /* Default desktop state: keep the filter column on the left. */
+  .filter-sidebar{ position:sticky; top:96px; }
+
+  /* Once the page scrolls into the product list, collapse the left column. */
+  .shop-layout.filters-collapsed{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .shop-layout.filters-collapsed .filter-sidebar{
+    display:none;
+  }
+
   .filter-topbar{
     position:fixed; left:0; right:0; top:76px; z-index:95;
-    background:rgba(251,249,244,.97); backdrop-filter:blur(10px);
+    background:rgba(251,249,244,.97);
+    backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
-    transform:translateY(-120%); opacity:0; pointer-events:none;
+    transform:translateY(-120%);
+    opacity:0;
+    pointer-events:none;
     transition:transform .22s ease, opacity .18s ease;
+    box-shadow:0 6px 18px rgba(38,33,28,.06);
   }
-  .filter-topbar.visible{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .filter-topbar.visible{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
   .filter-topbar-inner{
-    max-width:var(--container); margin:0 auto; padding:10px 40px;
-    display:flex; align-items:center; gap:18px; min-height:58px; overflow-x:auto;
+    max-width:var(--container);
+    margin:0 auto;
+    padding:10px 40px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    min-height:58px;
+    overflow-x:auto;
+    scrollbar-width:none;
   }
+  .filter-topbar-inner::-webkit-scrollbar{ display:none; }
   .topfilter-group{ display:flex; align-items:center; gap:8px; white-space:nowrap; }
   .topfilter-title{
-    font-family:var(--font-mono); font-size:10px; letter-spacing:.07em; text-transform:uppercase;
-    color:var(--ink-soft); margin-right:2px;
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.07em;
+    text-transform:uppercase; color:var(--ink-soft); margin-right:2px;
   }
   .topfilter-pill{
-    display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line);
-    background:var(--paper); border-radius:22px; padding:6px 10px; font-size:12px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:5px;
+    border:1px solid var(--line); border-radius:20px; padding:6px 10px;
+    background:var(--paper); font-size:12px; cursor:pointer;
+  }
+  .topfilter-pill:has(input:checked){
+    border-color:var(--ink);
+    background:var(--ink);
+    color:var(--paper);
   }
   .topfilter-pill input{ accent-color:var(--wood); width:13px; height:13px; }
   .topfilter-divider{ width:1px; height:26px; background:var(--line); flex:none; }
   .topfilter-reset{
-    margin-left:auto; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em;
-    text-transform:uppercase; color:var(--wood); border:none; background:none; white-space:nowrap;
+    border:none; background:none; color:var(--wood); cursor:pointer;
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em;
+    text-transform:uppercase; white-space:nowrap; border-bottom:1px solid var(--wood);
   }
-  @media (max-width:720px){
+
+  @media (max-width:860px){
+    /* On smaller screens use the horizontal filter bar once the list begins. */
+    .filter-sidebar{ position:static; }
+    .shop-layout{ grid-template-columns:1fr; }
     .filter-topbar-inner{ padding:8px 20px; gap:12px; }
     .topfilter-title{ display:none; }
     .topfilter-pill{ padding:6px 9px; }
@@ -566,16 +604,34 @@
       applyFilters();
     });
 
+    var shopLayout = document.querySelector('.shop-layout');
+    var collapsePoint = 0;
+
+    function measureCollapsePoint(){
+      if(!shopLayout) return;
+      /*
+       * Collapse shortly after the product-list section reaches the top.
+       * Using a fixed measured threshold avoids flicker when the sidebar is hidden.
+       */
+      collapsePoint = shopLayout.offsetTop + 150;
+    }
+
     function updateFilterTopbar(){
       var bar = document.getElementById('filterTopbar');
-      var sidebar = document.querySelector('.filter-sidebar');
-      if(!bar || !sidebar) return;
-      var show = sidebar.getBoundingClientRect().bottom <= 76;
+      if(!bar || !shopLayout) return;
+
+      var show = window.scrollY >= collapsePoint;
+      shopLayout.classList.toggle('filters-collapsed', show);
       bar.classList.toggle('visible', show);
       bar.setAttribute('aria-hidden', show ? 'false' : 'true');
     }
+
+    measureCollapsePoint();
     window.addEventListener('scroll', updateFilterTopbar, {passive:true});
-    window.addEventListener('resize', updateFilterTopbar);
+    window.addEventListener('resize', function(){
+      measureCollapsePoint();
+      updateFilterTopbar();
+    });
     updateFilterTopbar();
   })();
 </script>
