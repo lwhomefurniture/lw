@@ -195,6 +195,56 @@
 
   a:focus-visible, button:focus-visible{ outline:2px solid var(--wood); outline-offset:2px; }
   @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
+
+  /* ============ STICKY PRODUCT OPTION BAR ============ */
+  .sticky-product-bar{
+    position:fixed; left:0; right:0; top:76px; z-index:90;
+    background:rgba(251,249,244,.96); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transform:translateY(-130%); opacity:0; pointer-events:none;
+    transition:transform .24s ease, opacity .2s ease;
+  }
+  .sticky-product-bar.visible{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .sticky-product-inner{
+    max-width:var(--container); margin:0 auto; padding:10px 40px;
+    display:flex; align-items:center; gap:22px; min-height:66px;
+  }
+  .sticky-product-name{ min-width:190px; max-width:260px; }
+  .sticky-product-name strong{
+    display:block; font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-size:17px; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .sticky-product-name span{ display:block; color:var(--ink-soft); font-size:12px; margin-top:2px; }
+  .sticky-option{ display:flex; align-items:center; gap:9px; }
+  .sticky-label{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-soft); white-space:nowrap;
+  }
+  .sticky-size{
+    border:1px solid var(--ink); background:var(--ink); color:var(--paper);
+    border-radius:20px; padding:6px 11px; font-size:12px; white-space:nowrap;
+  }
+  .sticky-color{ display:flex; align-items:center; gap:7px; font-size:12px; white-space:nowrap; }
+  .sticky-color-dot{ width:22px; height:22px; border-radius:50%; border:1px solid var(--line); }
+  .sticky-spacer{ flex:1; }
+  .sticky-quote{
+    background:var(--ink); color:var(--paper); border-radius:4px; padding:10px 15px;
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.05em;
+    text-transform:uppercase; white-space:nowrap;
+  }
+  @media (max-width:860px){
+    .sticky-product-inner{ padding:8px 20px; gap:12px; min-height:58px; overflow-x:auto; }
+    .sticky-product-name{ min-width:135px; max-width:160px; }
+    .sticky-product-name strong{ font-size:14px; }
+    .sticky-product-name span{ font-size:11px; }
+    .sticky-label{ display:none; }
+    .sticky-quote{ padding:8px 11px; }
+  }
+  @media (max-width:520px){
+    .sticky-product-name{ min-width:115px; max-width:135px; }
+    .sticky-product-inner{ gap:9px; }
+  }
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Vanity Model 12", "description": "A 72-inch walnut double-sink freestanding bathroom vanity for spacious primary bathrooms.", "url": "https://www.lwhomefurniture.com/products/model-12-72-walnut-double-vanity.html", "brand": {"@type": "Brand", "name": "LW Home Furniture"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "3249", "availability": "https://schema.org/InStock"}}</script>
 </head>
@@ -226,6 +276,28 @@
     </div>
   </nav>
 </header>
+
+<div class="sticky-product-bar" id="stickyProductBar" aria-hidden="true">
+  <div class="sticky-product-inner">
+    <div class="sticky-product-name">
+      <strong id="stickyProductName">—</strong>
+      <span id="stickyProductPrice">—</span>
+    </div>
+    <div class="sticky-option">
+      <span class="sticky-label"><span data-en>Size</span><span data-zh>尺寸</span></span>
+      <span class="sticky-size" id="stickySize">—</span>
+    </div>
+    <div class="sticky-option">
+      <span class="sticky-label"><span data-en>Color</span><span data-zh>颜色</span></span>
+      <span class="sticky-color"><span class="sticky-color-dot" id="stickyColorDot"></span><span id="stickyColor">—</span></span>
+    </div>
+    <div class="sticky-spacer"></div>
+    <a href="../index.html#contact" class="sticky-quote" id="stickyQuote">
+      <span data-en>Request Quote</span><span data-zh>询价</span>
+    </a>
+  </div>
+</div>
+
 
 <div class="wrap breadcrumb">
   <a href="../index.html"><span data-en>Home</span><span data-zh>首页</span></a>
@@ -527,6 +599,14 @@
     });
     document.getElementById('selectedColor').textContent = isZh ? COLOR_LABEL[p.color].zh : COLOR_LABEL[p.color].en;
 
+    document.getElementById('stickyProductName').textContent = isZh ? p.nameZh : p.nameEn;
+    document.getElementById('stickyProductPrice').textContent = (isZh ? '起 ' : 'From ') + '$' + p.price.toLocaleString();
+    document.getElementById('stickySize').textContent = p.size + '"';
+    document.getElementById('stickyColor').textContent = isZh ? COLOR_LABEL[p.color].zh : COLOR_LABEL[p.color].en;
+    document.getElementById('stickyColorDot').className = 'sticky-color-dot sw-' + p.color;
+    document.getElementById('stickyQuote').href = '../index.html?product=' + encodeURIComponent(p.nameEn) + '#contact';
+
+
     // spec table
     var specTable = document.getElementById('specTable');
     var rows = [
@@ -567,7 +647,22 @@
     });
   }
 
+
+  function updateStickyProductBar(){
+    var bar = document.getElementById('stickyProductBar');
+    var info = document.querySelector('.product-info');
+    var options = document.querySelectorAll('.product-info .option-block');
+    if(!bar || !info || !options.length) return;
+    var lastOption = options[options.length - 1];
+    var shouldShow = lastOption.getBoundingClientRect().bottom < 76 && info.getBoundingClientRect().bottom > 76;
+    bar.classList.toggle('visible', shouldShow);
+    bar.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+  }
+  window.addEventListener('scroll', updateStickyProductBar, {passive:true});
+  window.addEventListener('resize', updateStickyProductBar);
+
   renderProduct();
+  updateStickyProductBar();
 </script>
 
 </body>
