@@ -6,12 +6,72 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.lwhomefurniture.com/bathroom-vanities.html</loc>
+    <loc>https://www.lwhomefurniture.com/collections/bathroom-vanities.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lwhomefurniture.com/product.html</loc>
+    <loc>https://www.lwhomefurniture.com/products/wave-rattan-36-oak-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/ripple-oak-24-bathroom-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/onyx-ring-30-black-bathroom-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/lucia-36-black-rattan-shelf-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/willow-grove-60-ash-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/haven-60-walnut-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/camden-30-walnut-farmhouse-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/sonoma-grand-84-oak-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/malibu-60-white-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/lumina-84-ash-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/provence-84-teak-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/model-12-72-walnut-double-vanity.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lwhomefurniture.com/products/heritage-72-teak-double-vanity.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
