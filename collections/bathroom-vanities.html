@@ -228,57 +228,6 @@
     .topfilter-pill{ padding:6px 9px; }
   }
 
-
-  /* ============ MOBILE NAVIGATION ============ */
-  .mobile-menu-btn{
-    display:none;
-    width:38px; height:38px;
-    align-items:center; justify-content:center;
-    border:1px solid var(--line);
-    border-radius:50%;
-    background:var(--paper);
-    color:var(--ink);
-    cursor:pointer;
-    flex:none;
-  }
-  .mobile-menu-btn svg{ width:18px; height:18px; }
-  .mobile-menu{
-    display:none;
-    position:fixed;
-    top:76px; left:0; right:0;
-    z-index:120;
-    background:rgba(251,249,244,.985);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-    box-shadow:0 16px 28px rgba(38,33,28,.12);
-    padding:10px 20px 18px;
-  }
-  .mobile-menu.open{ display:block; }
-  .mobile-menu a{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 4px;
-    border-bottom:1px solid var(--line);
-    font-family:var(--font-mono);
-    font-size:12px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-  }
-  .mobile-menu a:last-child{ border-bottom:none; }
-  .mobile-menu .mobile-sub{
-    color:var(--ink-soft);
-    font-family:var(--font-body);
-    font-size:12px;
-    letter-spacing:0;
-    text-transform:none;
-  }
-  @media (max-width:900px){
-    .mobile-menu-btn{ display:inline-flex; }
-    nav.wrap{ gap:12px; }
-    .lang-toggle{ margin-left:auto; }
-  }
-
 </style>
 </head>
 <body>
@@ -299,19 +248,10 @@
           <a href="#" class="disabled" tabindex="-1"><span><span data-en>Sauna</span><span data-zh>桑拿房</span></span><span class="soon-badge"><span data-en>Soon</span><span data-zh>即将上线</span></span></a>
         </div>
       </div>
-      <a href="../bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span></a>
-      <a href="../wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span></a>
       <a href="../index.html#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
       <a href="../index.html#about"><span data-en>About</span><span data-zh>关于我们</span></a>
       <a href="../index.html#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
     </div>
-    
-    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M4 7h16M4 12h16M4 17h16"/>
-      </svg>
-    </button>
-
     <div class="lang-toggle" role="group" aria-label="Language toggle">
       <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
       <button id="btn-zh" onclick="setLang('zh')">中文</button>
@@ -319,21 +259,11 @@
   </nav>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="../index.html"><span data-en>Home</span><span data-zh>首页</span><span class="mobile-sub">LW Home</span></a>
-  <a href="../collections/bathroom-vanities.html"><span data-en>Bathroom Vanities</span><span data-zh>浴室柜</span><span class="mobile-sub">Collection</span></a>
-  <a href="../bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span><span class="mobile-sub">For Trade</span></a>
-  <a href="../wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span><span class="mobile-sub">B2B</span></a>
-  <a href="../index.html#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
-  <a href="../index.html#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
-</div>
-
-
 <div class="filter-topbar" id="filterTopbar" aria-hidden="true">
   <div class="filter-topbar-inner">
     <div class="topfilter-group">
       <span class="topfilter-title"><span data-en>Size</span><span data-zh>尺寸</span></span>
-      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="15">15&quot;</label><label class="topfilter-pill"><input type="checkbox" class="tf-size" value="24">24&quot;</label>
+      <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="24">24&quot;</label>
       <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="30">30&quot;</label>
       <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="36">36&quot;</label>
       <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="48">48&quot;</label>
@@ -341,7 +271,7 @@
       <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="72">72&quot;</label>
       <label class="topfilter-pill"><input type="checkbox" class="tf-size" value="84">84&quot;</label>
     </div>
-    
+    <span class="topfilter-divider"></span>
     <div class="topfilter-group">
       <span class="topfilter-title"><span data-en>Color</span><span data-zh>颜色</span></span>
       <label class="topfilter-pill"><input type="checkbox" class="tf-color" value="oak"><span data-en>Oak</span><span data-zh>橡木</span></label>
@@ -373,7 +303,7 @@
   <aside class="filter-sidebar">
     <div class="filter-group">
       <div class="filter-group-title"><span data-en>Size</span><span data-zh>尺寸</span></div>
-      <label class="filter-option"><input type="checkbox" class="f-size" value="15"> 15"</label><label class="filter-option"><input type="checkbox" class="f-size" value="24"> 24"</label>
+      <label class="filter-option"><input type="checkbox" class="f-size" value="24"> 24"</label>
       <label class="filter-option"><input type="checkbox" class="f-size" value="30"> 30"</label>
       <label class="filter-option"><input type="checkbox" class="f-size" value="36"> 36"</label>
       <label class="filter-option"><input type="checkbox" class="f-size" value="48"> 48"</label>
@@ -395,7 +325,7 @@
 
   <div>
     <div class="shop-toolbar">
-      <div class="result-count"><span id="resultCount">18</span> <span data-en>vanities</span><span data-zh>款浴室柜</span></div>
+      <div class="result-count"><span id="resultCount">13</span> <span data-en>vanities</span><span data-zh>款浴室柜</span></div>
       <select class="sort-select">
         <option><span data-en>Featured</span></option>
         <option>Price: Low to High</option>
@@ -408,7 +338,7 @@
       <a href="../products/wave-rattan-36-oak-vanity.html" class="product-card" data-size="36" data-color="oak">
         <div class="product-media">
           <span class="product-badge"><span data-en>Featured</span><span data-zh>主推</span></span>
-          <img src="../images/vanity-01.jpg" alt="Wave Rattan wall-mounted bathroom vanity">
+          <img src="../images/wave-rattan-36-oak-vanity.jpg" alt="Wave Rattan wall-mounted bathroom vanity">
         </div>
         <div class="product-name"><span data-en>Wave Rattan Vanity</span><span data-zh>波纹藤编浴室柜</span></div>
         <div class="product-spec"><span data-en>36" · Wall-mounted · Rattan &amp; Oak</span><span data-zh>36" · 壁挂式 · 藤编+橡木</span></div>
@@ -458,7 +388,7 @@
         <div class="product-spec"><span data-en>60" · Freestanding · Ash</span><span data-zh>60" · 落地式 · 白蜡木</span></div>
         <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span></div>
         <div class="product-price"><span class="from">From</span> $520</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
       <a href="../products/haven-60-walnut-double-vanity.html" class="product-card" data-size="60" data-color="walnut">
@@ -469,7 +399,7 @@
         <div class="product-spec"><span data-en>60" · Freestanding · Walnut</span><span data-zh>60" · 落地式 · 胡桃木</span></div>
         <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span></div>
         <div class="product-price"><span class="from">From</span> $618</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
       <a href="../products/camden-30-walnut-farmhouse-vanity.html" class="product-card" data-size="30" data-color="walnut">
@@ -491,7 +421,7 @@
         <div class="product-spec"><span data-en>84" · Freestanding · Oak</span><span data-zh>84" · 落地式 · 橡木</span></div>
         <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span></div>
         <div class="product-price"><span class="from">From</span> $980</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
       <a href="../products/malibu-60-white-double-vanity.html" class="product-card" data-size="60" data-color="white">
@@ -502,7 +432,7 @@
         <div class="product-spec"><span data-en>60" · Freestanding · White</span><span data-zh>60" · 落地式 · 白色</span></div>
         <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span></div>
         <div class="product-price"><span class="from">From</span> $398</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
       <a href="../products/lumina-84-ash-double-vanity.html" class="product-card" data-size="84" data-color="ash">
@@ -513,7 +443,7 @@
         <div class="product-spec"><span data-en>84" · Freestanding · Ash</span><span data-zh>84" · 落地式 · 白蜡木</span></div>
         <div class="product-tags"><span data-en>LED Lighting</span><span data-zh>灯带</span></div>
         <div class="product-price"><span class="from">From</span> $988</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
       <a href="../products/provence-84-teak-double-vanity.html" class="product-card" data-size="84" data-color="teak">
@@ -524,206 +454,28 @@
         <div class="product-spec"><span data-en>84" · Freestanding · Teak</span><span data-zh>84" · 落地式 · 柚木</span></div>
         <div class="product-tags"><span data-en>Marble Apron</span><span data-zh>大理石围裙盆</span></div>
         <div class="product-price"><span class="from">From</span> $988</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
-      </a>
-      <a href="../products/aurelia-84-oak-double-vanity.html" class="product-card" data-size="84" data-color="oak">
-        <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/aurelia-84-inch-oak-double-bathroom-vanity-front.jpg" alt="84 inch oak double bathroom vanity with brass hardware and dual sinks" loading="lazy">
-        </div>
-        <div class="product-name"><span data-en>Aurelia 84″ Oak Double Vanity</span><span data-zh>Aurelia 84英寸橡木双盆浴室柜</span></div>
-        <div class="product-spec"><span data-en>84" · Freestanding · Oak</span><span data-zh>84" · 落地式 · Oak</span></div>
-        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span><span data-en>Double Basin</span><span data-zh>双盆</span></div>
-        <div class="product-price"><span class="from">From</span> $988</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
-      <a href="../products/verona-grand-84-oak-double-vanity.html" class="product-card" data-size="84" data-color="oak">
-        <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/verona-grand-84-inch-oak-double-vanity-front.jpg" alt="84 inch oak double vanity with geometric cabinet doors and marble look top" loading="lazy">
-        </div>
-        <div class="product-name"><span data-en>Verona Grand 84″ Oak Double Vanity</span><span data-zh>Verona Grand 84英寸橡木双盆浴室柜</span></div>
-        <div class="product-spec"><span data-en>84" · Freestanding · Oak</span><span data-zh>84" · 落地式 · Oak</span></div>
-        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span><span data-en>Double Basin</span><span data-zh>双盆</span></div>
-        <div class="product-price"><span class="from">From</span> $988</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+      <a href="../products/model-12-72-walnut-double-vanity.html" class="product-card" data-size="72" data-color="walnut">
+        <div class="product-media placeholder"><span class="placeholder-label"><span data-en>Photo coming soon</span><span data-zh>图片待补充</span></span></div>
+        <div class="product-name"><span data-en>Vanity Model 12</span><span data-zh>浴室柜 12 号</span></div>
+        <div class="product-spec"><span data-en>72" · Freestanding · Walnut</span><span data-zh>72" · 落地式 · 胡桃木</span></div>
+        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span></div>
+        <div class="product-price"><span class="from">From</span> $3,249</div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
 
-      <a href="../products/solenne-84-oak-double-vanity.html" class="product-card" data-size="84" data-color="oak">
+      <a href="../products/heritage-72-teak-double-vanity.html" class="product-card" data-size="72" data-color="teak">
         <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/solenne-84-inch-oak-double-bathroom-vanity-front.jpg" alt="modern 84 inch oak double bathroom vanity with sculpted drawers and open shelf" loading="lazy">
+          <img src="../images/vanity-02-a.jpg" alt="Heritage double-basin vanity with marble apron front">
         </div>
-        <div class="product-name"><span data-en>Solenne 84″ Oak Double Vanity</span><span data-zh>Solenne 84英寸橡木双盆浴室柜</span></div>
-        <div class="product-spec"><span data-en>84" · Freestanding · Oak</span><span data-zh>84" · 落地式 · Oak</span></div>
-        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span><span data-en>Double Basin</span><span data-zh>双盆</span></div>
-        <div class="product-price"><span class="from">From</span> $988</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
+        <div class="product-name"><span data-en>Heritage Double Vanity</span><span data-zh>传承双盆浴室柜</span></div>
+        <div class="product-spec"><span data-en>72" · Freestanding · Teak</span><span data-zh>72" · 落地式 · 柚木</span></div>
+        <div class="product-tags"><span data-en>Marble Apron</span><span data-zh>大理石围裙盆</span><span data-en>Double Basin</span><span data-zh>双盆</span></div>
+        <div class="product-price"><span class="from">From</span> $500</div>
+        <div class="product-moq"><span data-en>MOQ: 15 units</span><span data-zh>起订量：15台</span></div>
       </a>
-
-      <a href="../products/arcadia-72-walnut-double-vanity.html" class="product-card" data-size="72" data-color="walnut">
-        <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/arcadia-72-inch-walnut-double-bathroom-vanity-front.jpg" alt="72 inch walnut double bathroom vanity with carved arch pattern doors" loading="lazy">
-        </div>
-        <div class="product-name"><span data-en>Arcadia 72″ Walnut Double Vanity</span><span data-zh>Arcadia 72英寸胡桃木双盆浴室柜</span></div>
-        <div class="product-spec"><span data-en>72" · Freestanding · Walnut</span><span data-zh>72" · 落地式 · Walnut</span></div>
-        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span><span data-en>Double Basin</span><span data-zh>双盆</span></div>
-        <div class="product-price"><span class="from">From</span> $580</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
-      </a>
-
-      <a href="../products/noir-frame-48-black-floating-vanity.html" class="product-card" data-size="48" data-color="black">
-        <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/noir-frame-48-inch-black-floating-bathroom-vanity-room.jpg" alt="48 inch black floating bathroom vanity in modern bathroom" loading="lazy">
-        </div>
-        <div class="product-name"><span data-en>Noir Frame 48″ Black Floating Vanity</span><span data-zh>Noir Frame 48英寸黑色壁挂浴室柜</span></div>
-        <div class="product-spec"><span data-en>48" · Wall-mounted · Black wood finish</span><span data-zh>48" · 壁挂式 · Black wood finish</span></div>
-        <div class="product-tags"><span data-en>Single Basin</span><span data-zh>单盆</span><span data-en>Floating</span><span data-zh>壁挂</span></div>
-        <div class="product-price"><span class="from">From</span> $320</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
-      </a>
-
-      <a href="../products/riva-72-walnut-floating-double-vanity.html" class="product-card" data-size="72" data-color="walnut">
-        <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/riva-72-inch-walnut-floating-double-bathroom-vanity-room.jpg" alt="72 inch walnut floating double bathroom vanity with fluted drawer fronts" loading="lazy">
-        </div>
-        <div class="product-name"><span data-en>Riva 72″ Walnut Floating Double Vanity</span><span data-zh>Riva 72英寸胡桃木壁挂双盆浴室柜</span></div>
-        <div class="product-spec"><span data-en>72" · Wall-mounted · Walnut</span><span data-zh>72" · 壁挂式 · Walnut</span></div>
-        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span><span data-en>Floating</span><span data-zh>壁挂</span></div>
-        <div class="product-price"><span class="from">From</span> $650</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
-      </a>
-
-      <a href="../products/elara-60-teak-floating-double-vanity.html" class="product-card" data-size="60" data-color="teak">
-        <div class="product-media">
-          <span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span>
-          <img src="../images/elara-60-inch-teak-floating-double-bathroom-vanity-room.jpg" alt="60 inch teak floating double bathroom vanity with four drawers" loading="lazy">
-        </div>
-        <div class="product-name"><span data-en>Elara 60″ Teak Floating Double Vanity</span><span data-zh>Elara 60英寸柚木壁挂双盆浴室柜</span></div>
-        <div class="product-spec"><span data-en>60" · Wall-mounted · Teak</span><span data-zh>60" · 壁挂式 · Teak</span></div>
-        <div class="product-tags"><span data-en>Double Basin</span><span data-zh>双盆</span><span data-en>Floating</span><span data-zh>壁挂</span></div>
-        <div class="product-price"><span class="from">From</span> $538</div>
-        <div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div>
-      </a>
-
-<a href="../products/solenne-48-white-fluted-double-vanity.html" class="product-card" data-size="48" data-color="white">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/solenne-48-white-fluted-double-vanity-1.webp" alt="Solenne 48″ White Fluted Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Solenne 48″ White Fluted Double Vanity</span><span data-zh>Solenne 48″ White Fluted Double Vanity</span></div>
-<div class="product-spec"><span data-en>48" · Freestanding · White</span><span data-zh>48" · Freestanding · White</span></div>
-<div class="product-tags"><span>Fluted</span><span>Double Basin</span></div>
-<div class="product-price"><span class="from">From</span> $350</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/ellington-24-natural-oak-fluted-vanity.html" class="product-card" data-size="24" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/ellington-24-natural-oak-fluted-vanity-1.webp" alt="Ellington 24″ Natural Oak Fluted Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Ellington 24″ Natural Oak Fluted Vanity</span><span data-zh>Ellington 24″ Natural Oak Fluted Vanity</span></div>
-<div class="product-spec"><span data-en>24" · Freestanding · Oak</span><span data-zh>24" · Freestanding · Oak</span></div>
-<div class="product-tags"><span>Compact</span><span>3 Drawers</span></div>
-<div class="product-price"><span class="from">From</span> $198</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/solstice-24-teak-curved-drawer-vanity.html" class="product-card" data-size="24" data-color="teak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/solstice-24-teak-curved-drawer-vanity-1.webp" alt="Solstice 24″ Teak Curved Drawer Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Solstice 24″ Teak Curved Drawer Vanity</span><span data-zh>Solstice 24″ Teak Curved Drawer Vanity</span></div>
-<div class="product-spec"><span data-en>24" · Freestanding · Teak</span><span data-zh>24" · Freestanding · Teak</span></div>
-<div class="product-tags"><span>Curved Front</span><span>3 Drawers</span></div>
-<div class="product-price"><span class="from">From</span> $215</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/solstice-15-teak-petite-vanity.html" class="product-card" data-size="15" data-color="teak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/solstice-15-teak-petite-vanity-1.webp" alt="Solstice 15″ Teak Petite Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Solstice 15″ Teak Petite Vanity</span><span data-zh>Solstice 15″ Teak Petite Vanity</span></div>
-<div class="product-spec"><span data-en>15" · Freestanding · Teak</span><span data-zh>15" · Freestanding · Teak</span></div>
-<div class="product-tags"><span>Petite</span><span>Vessel Basin</span></div>
-<div class="product-price"><span class="from">From</span> $155</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/aurelia-36-ash-fluted-vanity.html" class="product-card" data-size="36" data-color="ash">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/aurelia-36-ash-fluted-vanity-1.webp" alt="Aurelia 36″ Ash Fluted Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Aurelia 36″ Ash Fluted Vanity</span><span data-zh>Aurelia 36″ Ash Fluted Vanity</span></div>
-<div class="product-spec"><span data-en>36" · Freestanding · Ash</span><span data-zh>36" · Freestanding · Ash</span></div>
-<div class="product-tags"><span>Fluted</span><span>Brass Detail</span></div>
-<div class="product-price"><span class="from">From</span> $320</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/aurelia-60-ash-fluted-double-vanity.html" class="product-card" data-size="60" data-color="ash">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/aurelia-60-ash-fluted-double-vanity-1.webp" alt="Aurelia 60″ Ash Fluted Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Aurelia 60″ Ash Fluted Double Vanity</span><span data-zh>Aurelia 60″ Ash Fluted Double Vanity</span></div>
-<div class="product-spec"><span data-en>60" · Freestanding · Ash</span><span data-zh>60" · Freestanding · Ash</span></div>
-<div class="product-tags"><span>Double Basin</span><span>Fluted</span></div>
-<div class="product-price"><span class="from">From</span> $580</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/riva-60-natural-oak-double-vanity.html" class="product-card" data-size="60" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/riva-60-natural-oak-double-vanity-1.webp" alt="Riva 60″ Natural Oak Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Riva 60″ Natural Oak Double Vanity</span><span data-zh>Riva 60″ Natural Oak Double Vanity</span></div>
-<div class="product-spec"><span data-en>60" · Freestanding · Oak</span><span data-zh>60" · Freestanding · Oak</span></div>
-<div class="product-tags"><span>Double Basin</span><span>Fluted</span></div>
-<div class="product-price"><span class="from">From</span> $488</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/riva-60-natural-oak-floating-double-vanity.html" class="product-card" data-size="60" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/riva-60-natural-oak-floating-double-vanity-1.webp" alt="Riva 60″ Natural Oak Floating Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Riva 60″ Natural Oak Floating Double Vanity</span><span data-zh>Riva 60″ Natural Oak Floating Double Vanity</span></div>
-<div class="product-spec"><span data-en>60" · Wall-mounted · Oak</span><span data-zh>60" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Floating</span><span>Double Basin</span></div>
-<div class="product-price"><span class="from">From</span> $428</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/halo-48-oak-rounded-fluted-floating-vanity.html" class="product-card" data-size="48" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/halo-48-oak-rounded-fluted-floating-vanity-1.webp" alt="Halo 48″ Oak Rounded Fluted Floating Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Halo 48″ Oak Rounded Fluted Floating Vanity</span><span data-zh>Halo 48″ Oak Rounded Fluted Floating Vanity</span></div>
-<div class="product-spec"><span data-en>48" · Wall-mounted · Oak</span><span data-zh>48" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Rounded</span><span>Fluted</span></div>
-<div class="product-price"><span class="from">From</span> $395</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/grid-48-oak-floating-double-vanity.html" class="product-card" data-size="48" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/grid-48-oak-floating-double-vanity-1.webp" alt="Grid 48″ Oak Textured Floating Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Grid 48″ Oak Textured Floating Double Vanity</span><span data-zh>Grid 48″ Oak Textured Floating Double Vanity</span></div>
-<div class="product-spec"><span data-en>48" · Wall-mounted · Oak</span><span data-zh>48" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Double Basin</span><span>Textured</span></div>
-<div class="product-price"><span class="from">From</span> $375</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/arc-36-oak-floating-door-vanity.html" class="product-card" data-size="36" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/arc-36-oak-floating-door-vanity-1.webp" alt="Arc 36″ Oak Floating Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Arc 36″ Oak Floating Vanity</span><span data-zh>Arc 36″ Oak Floating Vanity</span></div>
-<div class="product-spec"><span data-en>36" · Wall-mounted · Oak</span><span data-zh>36" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Double Door</span><span>Rounded</span></div>
-<div class="product-price"><span class="from">From</span> $175</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/carter-72-oak-geometric-floating-double-vanity.html" class="product-card" data-size="72" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/carter-72-oak-geometric-floating-double-vanity-1.webp" alt="Carter 72″ Oak Geometric Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Carter 72″ Oak Geometric Double Vanity</span><span data-zh>Carter 72″ Oak Geometric Double Vanity</span></div>
-<div class="product-spec"><span data-en>72" · Wall-mounted · Oak</span><span data-zh>72" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Double Basin</span><span>Geometric</span></div>
-<div class="product-price"><span class="from">From</span> $398</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/harper-36-oak-woven-front-floating-vanity.html" class="product-card" data-size="36" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/harper-36-oak-woven-front-floating-vanity-1.webp" alt="Harper 36″ Oak Woven-Front Floating Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Harper 36″ Oak Woven-Front Floating Vanity</span><span data-zh>Harper 36″ Oak Woven-Front Floating Vanity</span></div>
-<div class="product-spec"><span data-en>36" · Wall-mounted · Oak</span><span data-zh>36" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Woven Front</span><span>Floating</span></div>
-<div class="product-price"><span class="from">From</span> $288</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/harper-60-oak-woven-front-double-floating-vanity.html" class="product-card" data-size="60" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/harper-60-oak-woven-front-double-floating-vanity-1.webp" alt="Harper 60″ Oak Woven-Front Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Harper 60″ Oak Woven-Front Double Vanity</span><span data-zh>Harper 60″ Oak Woven-Front Double Vanity</span></div>
-<div class="product-spec"><span data-en>60" · Wall-mounted · Oak</span><span data-zh>60" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Woven Front</span><span>Double Basin</span></div>
-<div class="product-price"><span class="from">From</span> $475</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/sienna-36-white-rattan-floating-vanity.html" class="product-card" data-size="36" data-color="white">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/sienna-36-white-rattan-floating-vanity-1.webp" alt="Sienna 36″ White Rattan Floating Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Sienna 36″ White Rattan Floating Vanity</span><span data-zh>Sienna 36″ White Rattan Floating Vanity</span></div>
-<div class="product-spec"><span data-en>36" · Wall-mounted · White</span><span data-zh>36" · Wall-mounted · White</span></div>
-<div class="product-tags"><span>Rattan</span><span>Floating</span></div>
-<div class="product-price"><span class="from">From</span> $175</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/sienna-72-white-rattan-double-floating-vanity.html" class="product-card" data-size="72" data-color="white">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/sienna-72-white-rattan-double-floating-vanity-1.webp" alt="Sienna 72″ White Rattan Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Sienna 72″ White Rattan Double Vanity</span><span data-zh>Sienna 72″ White Rattan Double Vanity</span></div>
-<div class="product-spec"><span data-en>72" · Wall-mounted · White</span><span data-zh>72" · Wall-mounted · White</span></div>
-<div class="product-tags"><span>Rattan</span><span>Double Basin</span></div>
-<div class="product-price"><span class="from">From</span> $398</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/linden-30-natural-oak-slatted-floating-vanity.html" class="product-card" data-size="30" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/linden-30-natural-oak-slatted-floating-vanity-1.webp" alt="Linden 30″ Natural Oak Slatted Floating Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Linden 30″ Natural Oak Slatted Floating Vanity</span><span data-zh>Linden 30″ Natural Oak Slatted Floating Vanity</span></div>
-<div class="product-spec"><span data-en>30" · Wall-mounted · Oak</span><span data-zh>30" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Slatted</span><span>Compact</span></div>
-<div class="product-price"><span class="from">From</span> $158</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/linden-72-natural-oak-slatted-double-vanity.html" class="product-card" data-size="72" data-color="oak">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/linden-72-natural-oak-slatted-double-vanity-1.webp" alt="Linden 72″ Natural Oak Slatted Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Linden 72″ Natural Oak Slatted Double Vanity</span><span data-zh>Linden 72″ Natural Oak Slatted Double Vanity</span></div>
-<div class="product-spec"><span data-en>72" · Wall-mounted · Oak</span><span data-zh>72" · Wall-mounted · Oak</span></div>
-<div class="product-tags"><span>Slatted</span><span>Double Basin</span></div>
-<div class="product-price"><span class="from">From</span> $375</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
-<a href="../products/arden-60-white-double-freestanding-vanity.html" class="product-card" data-size="60" data-color="white">
-<div class="product-media"><span class="product-badge"><span data-en>New</span><span data-zh>新品</span></span><img src="../images/arden-60-white-double-freestanding-vanity-1.webp" alt="Arden 60″ White Double Vanity" loading="lazy"></div>
-<div class="product-name"><span data-en>Arden 60″ White Double Vanity</span><span data-zh>Arden 60″ White Double Vanity</span></div>
-<div class="product-spec"><span data-en>60" · Freestanding · White</span><span data-zh>60" · Freestanding · White</span></div>
-<div class="product-tags"><span>Double Basin</span><span>Curved Doors</span></div>
-<div class="product-price"><span class="from">From</span> $255</div><div class="product-moq"><span data-en>MOQ: 20 units</span><span data-zh>起订量：20台</span></div></a>
 
 
     </div>
@@ -740,7 +492,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">LW <span class="logo-sub">Home Furniture</span></div>
-        <p><span data-en>Solid wood bathroom furniture engineered and manufactured in our own production facility for consistent quality, dependable capacity and long-term durability.</span><span data-zh>自有生产基地制造实木浴室家具，以稳定品质、可靠产能和长期耐用性服务全球客户。</span></p>
+        <p><span data-en>Solid wood furniture, handcrafted in small workshops and built to be inherited.</span><span data-zh>实木家具，出自小型工坊的手工制作，为传承而生。</span></p>
       </div>
       <div class="footer-col">
         <h4><span data-en>Collections</span><span data-zh>产品系列</span></h4>
@@ -882,35 +634,6 @@
     });
     updateFilterTopbar();
   })();
-
-function toggleMobileMenu(){
-  var menu = document.getElementById('mobileMenu');
-  var btn = document.getElementById('mobileMenuBtn');
-  if(!menu || !btn) return;
-  var open = !menu.classList.contains('open');
-  menu.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-}
-document.addEventListener('click', function(e){
-  var menu = document.getElementById('mobileMenu');
-  var btn = document.getElementById('mobileMenuBtn');
-  if(!menu || !btn || !menu.classList.contains('open')) return;
-  if(!menu.contains(e.target) && !btn.contains(e.target)){
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-    btn.setAttribute('aria-label','Open menu');
-  }
-});
-window.addEventListener('resize', function(){
-  if(window.innerWidth > 900){
-    var menu = document.getElementById('mobileMenu');
-    var btn = document.getElementById('mobileMenuBtn');
-    if(menu) menu.classList.remove('open');
-    if(btn) btn.setAttribute('aria-expanded','false');
-  }
-});
-
 </script>
 
 </body>
