@@ -728,6 +728,26 @@
     .contact-image-form{gap:12px}
   }
 
+  /* ============ FEATURED PRODUCT LINKS ============ */
+  .featured-link-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+  }
+  .featured-link-card{
+    display:block; border:1px solid var(--line); background:var(--paper);
+    padding:20px 22px; border-radius:2px; transition:transform .2s ease,border-color .2s ease;
+  }
+  .featured-link-card:hover{ transform:translateY(-2px); border-color:#C7B89D; }
+  .featured-link-kicker{
+    font-family:var(--font-mono); font-size:10px; letter-spacing:.07em;
+    text-transform:uppercase; color:var(--wood-dark); margin-bottom:8px;
+  }
+  .featured-link-card h3{
+    font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; margin-bottom:7px;
+  }
+  .featured-link-card p{ color:var(--ink-soft); font-size:13.5px; line-height:1.55; }
+  @media (max-width:900px){ .featured-link-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .featured-link-grid{grid-template-columns:1fr;} }
+
 </style>
 </head>
 <body>
@@ -901,6 +921,50 @@
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight featured-products-links" aria-labelledby="featured-vanities-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow"><span data-en>Featured Vanities</span><span data-zh>重点浴室柜</span></div>
+        <h2 id="featured-vanities-title"><span data-en>Explore selected sizes and styles.</span><span data-zh>浏览重点尺寸与设计。</span></h2>
+      </div>
+      <p><span data-en>Start with a selection of our most representative bathroom vanity designs, from compact 24-inch models to 84-inch double vanities.</span><span data-zh>从24英寸紧凑款到84英寸双盆款，快速浏览具有代表性的浴室柜设计。</span></p>
+    </div>
+    <div class="featured-link-grid">
+      <a class="featured-link-card" href="products/ellington-24-natural-oak-fluted-vanity.html">
+        <div class="featured-link-kicker">24 inch · Natural Oak · Fluted</div>
+        <h3>24 Inch Natural Oak Fluted Bathroom Vanity</h3>
+        <p><span data-en>Compact freestanding oak vanity with fluted detailing and a furniture-style profile.</span><span data-zh>24英寸天然橡木波纹浴室柜，适合紧凑空间。</span></p>
+      </a>
+      <a class="featured-link-card" href="products/wave-rattan-36-oak-vanity.html">
+        <div class="featured-link-kicker">36 inch · Oak + Rattan · Wall-mounted</div>
+        <h3>36 Inch Oak Rattan Bathroom Vanity</h3>
+        <p><span data-en>Oak and rattan wall-mounted vanity combining warm natural materials with a light furniture feel.</span><span data-zh>36英寸橡木藤编壁挂浴室柜，天然材质与家具化设计结合。</span></p>
+      </a>
+      <a class="featured-link-card" href="products/halo-48-oak-rounded-fluted-floating-vanity.html">
+        <div class="featured-link-kicker">48 inch · Oak · Floating</div>
+        <h3>48 Inch Oak Floating Bathroom Vanity</h3>
+        <p><span data-en>Rounded oak floating vanity with fluted detailing for modern bathroom projects.</span><span data-zh>48英寸橡木壁挂浴室柜，圆角与波纹细节适合现代浴室。</span></p>
+      </a>
+      <a class="featured-link-card" href="products/riva-60-natural-oak-floating-double-vanity.html">
+        <div class="featured-link-kicker">60 inch · Natural Oak · Floating Double</div>
+        <h3>60 Inch Natural Oak Floating Double Bathroom Vanity</h3>
+        <p><span data-en>Natural oak floating double vanity designed for modern primary bathroom programs.</span><span data-zh>60英寸天然橡木壁挂双盆浴室柜，适合现代主卫系列。</span></p>
+      </a>
+      <a class="featured-link-card" href="products/carter-72-oak-geometric-floating-double-vanity.html">
+        <div class="featured-link-kicker">72 inch · Oak · Floating Double</div>
+        <h3>72 Inch Oak Floating Double Bathroom Vanity</h3>
+        <p><span data-en>Large oak double vanity with geometric panel detailing for statement bathroom projects.</span><span data-zh>72英寸橡木壁挂双盆浴室柜，几何门板适合大型浴室项目。</span></p>
+      </a>
+      <a class="featured-link-card" href="products/aurelia-84-oak-double-vanity.html">
+        <div class="featured-link-kicker">84 inch · Oak · Double Sink</div>
+        <h3>84 Inch Oak Double Bathroom Vanity</h3>
+        <p><span data-en>Extra-large oak double vanity built for spacious primary bathrooms and wholesale programs.</span><span data-zh>84英寸橡木双盆浴室柜，适合大尺寸主卫及批发系列。</span></p>
+      </a>
     </div>
   </div>
 </section>
