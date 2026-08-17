@@ -734,17 +734,25 @@
   }
   .featured-link-card{
     display:block; border:1px solid var(--line); background:var(--paper);
-    padding:20px 22px; border-radius:2px; transition:transform .2s ease,border-color .2s ease;
+    padding:0; border-radius:2px; overflow:hidden; transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
   }
-  .featured-link-card:hover{ transform:translateY(-2px); border-color:#C7B89D; }
+  .featured-link-card:hover{ transform:translateY(-3px); border-color:#C7B89D; box-shadow:0 10px 28px rgba(38,33,28,.07); }
+  .featured-link-media{aspect-ratio:4/3;overflow:hidden;background:var(--bg-deep)}
+  .featured-link-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+  .featured-link-card:hover .featured-link-media img{transform:scale(1.025)}
+  .featured-link-body{padding:16px 18px 18px}
   .featured-link-kicker{
     font-family:var(--font-mono); font-size:10px; letter-spacing:.07em;
     text-transform:uppercase; color:var(--wood-dark); margin-bottom:8px;
   }
   .featured-link-card h3{
-    font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; margin-bottom:7px;
+    font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; margin-bottom:8px;
   }
-  .featured-link-card p{ color:var(--ink-soft); font-size:13.5px; line-height:1.55; }
+  .auto-product-meta{font-size:12.5px;color:var(--ink-soft);min-height:20px}
+  .auto-product-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
+  .auto-price{font-family:var(--font-mono);color:var(--wood-dark)}
+  .auto-view{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px}
+
   @media (max-width:900px){ .featured-link-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .featured-link-grid{grid-template-columns:1fr;} }
 
@@ -934,36 +942,60 @@
       </div>
       <p><span data-en>Start with a selection of our most representative bathroom vanity designs, from compact 24-inch models to 84-inch double vanities.</span><span data-zh>从24英寸紧凑款到84英寸双盆款，快速浏览具有代表性的浴室柜设计。</span></p>
     </div>
-    <div class="featured-link-grid">
-      <a class="featured-link-card" href="products/ellington-24-natural-oak-fluted-vanity.html">
-        <div class="featured-link-kicker">24 inch · Natural Oak · Fluted</div>
-        <h3>24 Inch Natural Oak Fluted Bathroom Vanity</h3>
-        <p><span data-en>Compact freestanding oak vanity with fluted detailing and a furniture-style profile.</span><span data-zh>24英寸天然橡木波纹浴室柜，适合紧凑空间。</span></p>
+    <div class="featured-link-grid" id="featuredVanityFeed" data-auto-products="home">
+      <a class="featured-link-card" href="products/montara-60-ash-double-vanity.html">
+        <div class="featured-link-media"><img src="images/montara-60-ash-double-vanity-1.webp" alt="Montara 60″ Ash Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="featured-link-body">
+          <div class="featured-link-kicker"><span data-en>60&quot; · Freestanding · Ash</span><span data-zh>60&quot; · Freestanding · Ash</span></div>
+          <h3><span data-en>Montara 60″ Ash Double Vanity</span><span data-zh>Montara 60″ Ash Double Vanity</span></h3>
+          <div class="auto-product-meta">Double Basin · Drawer Storage</div>
+          <div class="auto-product-footer"><span class="auto-price">From $355</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
       </a>
-      <a class="featured-link-card" href="products/wave-rattan-36-oak-vanity.html">
-        <div class="featured-link-kicker">36 inch · Oak + Rattan · Wall-mounted</div>
-        <h3>36 Inch Oak Rattan Bathroom Vanity</h3>
-        <p><span data-en>Oak and rattan wall-mounted vanity combining warm natural materials with a light furniture feel.</span><span data-zh>36英寸橡木藤编壁挂浴室柜，天然材质与家具化设计结合。</span></p>
+      <a class="featured-link-card" href="products/linea-48-oak-floating-vanity.html">
+        <div class="featured-link-media"><img src="images/linea-48-oak-floating-vanity-1.webp" alt="Linea 48″ Oak Floating Vanity" loading="lazy" decoding="async"></div>
+        <div class="featured-link-body">
+          <div class="featured-link-kicker"><span data-en>48&quot; · Wall-mounted · Oak</span><span data-zh>48&quot; · Wall-mounted · Oak</span></div>
+          <h3><span data-en>Linea 48″ Oak Floating Vanity</span><span data-zh>Linea 48″ Oak Floating Vanity</span></h3>
+          <div class="auto-product-meta">Floating · Vertical Fluted</div>
+          <div class="auto-product-footer"><span class="auto-price">From $189</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
       </a>
-      <a class="featured-link-card" href="products/halo-48-oak-rounded-fluted-floating-vanity.html">
-        <div class="featured-link-kicker">48 inch · Oak · Floating</div>
-        <h3>48 Inch Oak Floating Bathroom Vanity</h3>
-        <p><span data-en>Rounded oak floating vanity with fluted detailing for modern bathroom projects.</span><span data-zh>48英寸橡木壁挂浴室柜，圆角与波纹细节适合现代浴室。</span></p>
+      <a class="featured-link-card" href="products/nordic-60-teak-floating-double-vanity.html">
+        <div class="featured-link-media"><img src="images/nordic-60-teak-floating-double-vanity-1.webp" alt="Nordic 60″ Teak Floating Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="featured-link-body">
+          <div class="featured-link-kicker"><span data-en>60&quot; · Wall-mounted · Teak</span><span data-zh>60&quot; · Wall-mounted · Teak</span></div>
+          <h3><span data-en>Nordic 60″ Teak Floating Double Vanity</span><span data-zh>Nordic 60″ Teak Floating Double Vanity</span></h3>
+          <div class="auto-product-meta">Floating · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $335</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
       </a>
-      <a class="featured-link-card" href="products/riva-60-natural-oak-floating-double-vanity.html">
-        <div class="featured-link-kicker">60 inch · Natural Oak · Floating Double</div>
-        <h3>60 Inch Natural Oak Floating Double Bathroom Vanity</h3>
-        <p><span data-en>Natural oak floating double vanity designed for modern primary bathroom programs.</span><span data-zh>60英寸天然橡木壁挂双盆浴室柜，适合现代主卫系列。</span></p>
+      <a class="featured-link-card" href="products/atelier-60-white-open-shelf-vanity.html">
+        <div class="featured-link-media"><img src="images/atelier-60-white-open-shelf-vanity-1.webp" alt="Atelier 60″ White Open-Shelf Vanity" loading="lazy" decoding="async"></div>
+        <div class="featured-link-body">
+          <div class="featured-link-kicker"><span data-en>60&quot; · Wall-mounted · White</span><span data-zh>60&quot; · Wall-mounted · White</span></div>
+          <h3><span data-en>Atelier 60″ White Open-Shelf Vanity</span><span data-zh>Atelier 60″ White Open-Shelf Vanity</span></h3>
+          <div class="auto-product-meta">Open Shelf · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $237</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
       </a>
-      <a class="featured-link-card" href="products/carter-72-oak-geometric-floating-double-vanity.html">
-        <div class="featured-link-kicker">72 inch · Oak · Floating Double</div>
-        <h3>72 Inch Oak Floating Double Bathroom Vanity</h3>
-        <p><span data-en>Large oak double vanity with geometric panel detailing for statement bathroom projects.</span><span data-zh>72英寸橡木壁挂双盆浴室柜，几何门板适合大型浴室项目。</span></p>
+      <a class="featured-link-card" href="products/reed-72-ash-fluted-double-vanity.html">
+        <div class="featured-link-media"><img src="images/reed-72-ash-fluted-double-vanity-1.webp" alt="Reed 72″ Ash Fluted Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="featured-link-body">
+          <div class="featured-link-kicker"><span data-en>72&quot; · Wall-mounted · Ash</span><span data-zh>72&quot; · Wall-mounted · Ash</span></div>
+          <h3><span data-en>Reed 72″ Ash Fluted Double Vanity</span><span data-zh>Reed 72″ Ash Fluted Double Vanity</span></h3>
+          <div class="auto-product-meta">Fluted · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $488</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
       </a>
-      <a class="featured-link-card" href="products/aurelia-84-oak-double-vanity.html">
-        <div class="featured-link-kicker">84 inch · Oak · Double Sink</div>
-        <h3>84 Inch Oak Double Bathroom Vanity</h3>
-        <p><span data-en>Extra-large oak double vanity built for spacious primary bathrooms and wholesale programs.</span><span data-zh>84英寸橡木双盆浴室柜，适合大尺寸主卫及批发系列。</span></p>
+      <a class="featured-link-card" href="products/pebble-24-white-textured-vanity.html">
+        <div class="featured-link-media"><img src="images/pebble-24-white-textured-vanity-1.webp" alt="Pebble 24″ White Textured Vanity" loading="lazy" decoding="async"></div>
+        <div class="featured-link-body">
+          <div class="featured-link-kicker"><span data-en>24&quot; · Freestanding · White</span><span data-zh>24&quot; · Freestanding · White</span></div>
+          <h3><span data-en>Pebble 24″ White Textured Vanity</span><span data-zh>Pebble 24″ White Textured Vanity</span></h3>
+          <div class="auto-product-meta">Textured Front · Compact</div>
+          <div class="auto-product-footer"><span class="auto-price">From $135</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -1269,5 +1301,6 @@ window.addEventListener('resize', function(){
 
 </script>
 
+<script src="assets/featured-products.js" defer></script>
 </body>
 </html>

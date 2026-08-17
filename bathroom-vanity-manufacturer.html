@@ -107,11 +107,19 @@ h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.02em;max-wid
 @media(max-width:900px){.process{grid-template-columns:1fr}.step{border-right:none;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:none}}
 
 .product-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.product-link{display:block;border:1px solid var(--line);padding:22px;background:var(--paper);transition:transform .2s ease}
-.product-link:hover{transform:translateY(-2px)}
-.product-link .kicker{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--wood)}
-.product-link h3{font-size:22px;margin:8px 0 5px}
-.product-link p{font-size:13.5px;color:var(--ink-soft)}
+.product-link{display:block;background:var(--paper);border:1px solid var(--line);padding:0;overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.product-link:hover{transform:translateY(-3px);border-color:#C7B89D;box-shadow:0 10px 28px rgba(38,33,28,.07)}
+.product-link-media{aspect-ratio:4/3;overflow:hidden;background:var(--bg-deep)}
+.product-link-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.product-link:hover .product-link-media img{transform:scale(1.025)}
+.product-link-body{padding:16px 18px 18px}
+.product-link .kicker{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--wood);margin-bottom:8px}
+.product-link h3{font-size:21px;line-height:1.25;margin:0 0 8px}
+.auto-product-meta{font-size:12.5px;color:var(--ink-soft);min-height:20px}
+.auto-product-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
+.auto-price{font-family:var(--font-mono);color:var(--wood-dark)}
+.auto-view{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px}
+@media(max-width:980px){.product-links{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.product-links{grid-template-columns:1fr}}
 
 .rfq{background:var(--ink);color:var(--paper);padding:80px 0;text-align:center}
@@ -306,19 +314,115 @@ footer{padding:56px 0 30px}
       </div>
       <p><span data-en>Our current collection includes large double vanities, natural wood finishes and furniture-style designs suitable for North American retail and wholesale channels.</span><span data-zh>当前系列覆盖大尺寸双盆、天然木色及家具化设计，适合北美零售与批发渠道。</span></p>
     </div>
-    <div class="product-links">
-      <a class="product-link" href="products/solstice-15-teak-petite-vanity.html"><div class="kicker">15 inch · Teak · Freestanding</div><h3>15 Inch Teak Small Bathroom Vanity</h3><p><span data-en>Compact teak vanity for powder rooms and small bathroom layouts.</span><span data-zh>15英寸柚木小尺寸浴室柜，适合客卫及紧凑空间。</span></p></a>
-      <a class="product-link" href="products/ellington-24-natural-oak-fluted-vanity.html"><div class="kicker">24 inch · Natural Oak · Fluted</div><h3>24 Inch Natural Oak Fluted Bathroom Vanity</h3><p><span data-en>Compact freestanding oak vanity with fluted detailing and a furniture-style profile.</span><span data-zh>24英寸天然橡木波纹浴室柜，适合紧凑空间。</span></p></a>
-      <a class="product-link" href="products/sculpt-30-walnut-wave-vanity.html"><div class="kicker">30 inch · Walnut · Floating</div><h3>30 Inch Walnut Floating Bathroom Vanity</h3><p><span data-en>Wall-mounted walnut vanity with a sculpted wave front for a distinctive modern look.</span><span data-zh>30英寸胡桃木壁挂浴室柜，波浪造型门板更具设计感。</span></p></a>
-      <a class="product-link" href="products/wave-rattan-36-oak-vanity.html"><div class="kicker">36 inch · Oak + Rattan · Wall-mounted</div><h3>36 Inch Oak Rattan Bathroom Vanity</h3><p><span data-en>Oak and rattan wall-mounted vanity combining warm natural materials with a light furniture feel.</span><span data-zh>36英寸橡木藤编壁挂浴室柜，天然材质与家具化设计结合。</span></p></a>
-      <a class="product-link" href="products/aurelia-36-ash-fluted-vanity.html"><div class="kicker">36 inch · Ash · Fluted</div><h3>36 Inch Ash Fluted Bathroom Vanity</h3><p><span data-en>Freestanding ash vanity with fluted fronts for a clean, furniture-inspired bathroom program.</span><span data-zh>36英寸白蜡木波纹浴室柜，适合家具化浴室系列。</span></p></a>
-      <a class="product-link" href="products/halo-48-oak-rounded-fluted-floating-vanity.html"><div class="kicker">48 inch · Oak · Floating</div><h3>48 Inch Oak Floating Bathroom Vanity</h3><p><span data-en>Rounded oak floating vanity with fluted detailing for modern bathroom projects.</span><span data-zh>48英寸橡木壁挂浴室柜，圆角与波纹细节适合现代浴室。</span></p></a>
-      <a class="product-link" href="products/solenne-48-white-fluted-double-vanity.html"><div class="kicker">48 inch · White · Double Sink</div><h3>48 Inch White Fluted Double Bathroom Vanity</h3><p><span data-en>White fluted double vanity for buyers looking for a bright furniture-style bathroom collection.</span><span data-zh>48英寸白色波纹双盆浴室柜，适合明亮家具化浴室系列。</span></p></a>
-      <a class="product-link" href="products/elara-60-teak-floating-double-vanity.html"><div class="kicker">60 inch · Teak · Floating Double</div><h3>60 Inch Teak Floating Double Bathroom Vanity</h3><p><span data-en>Teak floating double vanity with a warm natural finish for larger bathroom layouts.</span><span data-zh>60英寸柚木壁挂双盆浴室柜，适合较大浴室空间。</span></p></a>
-      <a class="product-link" href="products/riva-60-natural-oak-floating-double-vanity.html"><div class="kicker">60 inch · Natural Oak · Floating Double</div><h3>60 Inch Natural Oak Floating Double Bathroom Vanity</h3><p><span data-en>Natural oak floating double vanity designed for modern primary bathroom programs.</span><span data-zh>60英寸天然橡木壁挂双盆浴室柜，适合现代主卫系列。</span></p></a>
-      <a class="product-link" href="products/carter-72-oak-geometric-floating-double-vanity.html"><div class="kicker">72 inch · Oak · Floating Double</div><h3>72 Inch Oak Floating Double Bathroom Vanity</h3><p><span data-en>Large oak double vanity with geometric panel detailing for statement bathroom projects.</span><span data-zh>72英寸橡木壁挂双盆浴室柜，几何门板适合大型浴室项目。</span></p></a>
-      <a class="product-link" href="products/riva-72-walnut-floating-double-vanity.html"><div class="kicker">72 inch · Walnut · Floating Double</div><h3>72 Inch Walnut Floating Double Bathroom Vanity</h3><p><span data-en>Large walnut floating double vanity for warm, modern primary bathroom collections.</span><span data-zh>72英寸胡桃木壁挂双盆浴室柜，适合暖色现代主卫系列。</span></p></a>
-      <a class="product-link" href="products/aurelia-84-oak-double-vanity.html"><div class="kicker">84 inch · Oak · Double Sink</div><h3>84 Inch Oak Double Bathroom Vanity</h3><p><span data-en>Extra-large oak double vanity built for spacious primary bathrooms and wholesale programs.</span><span data-zh>84英寸橡木双盆浴室柜，适合大尺寸主卫及批发系列。</span></p></a>
+    <div class="product-links" id="manufacturerProductFeed" data-auto-products="manufacturer">
+      <a class="product-link" href="products/louver-60-black-double-vanity.html">
+        <div class="product-link-media"><img src="images/louver-60-black-double-vanity-1.webp" alt="Louver 60″ Black Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>60&quot; · Freestanding · Black</span><span data-zh>60&quot; · Freestanding · Black</span></div>
+          <h3><span data-en>Louver 60″ Black Double Vanity</span><span data-zh>Louver 60″ Black Double Vanity</span></h3>
+          <div class="auto-product-meta">Louvered Doors · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $315</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/sculpt-30-walnut-wave-vanity.html">
+        <div class="product-link-media"><img src="images/sculpt-30-walnut-wave-vanity-1.webp" alt="Sculpt 30″ Walnut Wave Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>30&quot; · Wall-mounted · Walnut</span><span data-zh>30&quot; · Wall-mounted · Walnut</span></div>
+          <h3><span data-en>Sculpt 30″ Walnut Wave Vanity</span><span data-zh>Sculpt 30″ Walnut Wave Vanity</span></h3>
+          <div class="auto-product-meta">Sculpted Front · Floating</div>
+          <div class="auto-product-footer"><span class="auto-price">From $188</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/bronze-flute-30-black-floating-vanity.html">
+        <div class="product-link-media"><img src="images/bronze-flute-30-black-floating-vanity-1.webp" alt="Bronze Flute 30″ Black Floating Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>30&quot; · Wall-mounted · Black</span><span data-zh>30&quot; · Wall-mounted · Black</span></div>
+          <h3><span data-en>Bronze Flute 30″ Black Floating Vanity</span><span data-zh>Bronze Flute 30″ Black Floating Vanity</span></h3>
+          <div class="auto-product-meta">Fluted · Rounded Sides</div>
+          <div class="auto-product-footer"><span class="auto-price">From $188</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/weave-block-30-walnut-floating-vanity.html">
+        <div class="product-link-media"><img src="images/weave-block-30-walnut-floating-vanity-1.webp" alt="Weave Block 30″ Walnut Floating Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>30&quot; · Wall-mounted · Walnut</span><span data-zh>30&quot; · Wall-mounted · Walnut</span></div>
+          <h3><span data-en>Weave Block 30″ Walnut Floating Vanity</span><span data-zh>Weave Block 30″ Walnut Floating Vanity</span></h3>
+          <div class="auto-product-meta">Woven Front · Floating</div>
+          <div class="auto-product-footer"><span class="auto-price">From $188</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/arabesque-72-teak-double-vanity.html">
+        <div class="product-link-media"><img src="images/arabesque-72-teak-double-vanity-1.webp" alt="Arabesque 72″ Teak Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>72&quot; · Wall-mounted · Teak</span><span data-zh>72&quot; · Wall-mounted · Teak</span></div>
+          <h3><span data-en>Arabesque 72″ Teak Double Vanity</span><span data-zh>Arabesque 72″ Teak Double Vanity</span></h3>
+          <div class="auto-product-meta">Decorative Front · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $588</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/noir-grain-84-black-double-vanity.html">
+        <div class="product-link-media"><img src="images/noir-grain-84-black-double-vanity-1.webp" alt="Noir Grain 84″ Black Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>84&quot; · Wall-mounted · Black</span><span data-zh>84&quot; · Wall-mounted · Black</span></div>
+          <h3><span data-en>Noir Grain 84″ Black Double Vanity</span><span data-zh>Noir Grain 84″ Black Double Vanity</span></h3>
+          <div class="auto-product-meta">Statement Front · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $698</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/aurora-36-black-glass-fluted-vanity.html">
+        <div class="product-link-media"><img src="images/aurora-36-black-glass-fluted-vanity-1.webp" alt="Aurora 36″ Black Glass-Fluted Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>36&quot; · Wall-mounted · Black</span><span data-zh>36&quot; · Wall-mounted · Black</span></div>
+          <h3><span data-en>Aurora 36″ Black Glass-Fluted Vanity</span><span data-zh>Aurora 36″ Black Glass-Fluted Vanity</span></h3>
+          <div class="auto-product-meta">Fluted Glass · Floating</div>
+          <div class="auto-product-footer"><span class="auto-price">From $198</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/rosa-60-white-louver-double-vanity.html">
+        <div class="product-link-media"><img src="images/rosa-60-white-louver-double-vanity-1.webp" alt="Rosa 60″ White Louver Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>60&quot; · Wall-mounted · White</span><span data-zh>60&quot; · Wall-mounted · White</span></div>
+          <h3><span data-en>Rosa 60″ White Louver Double Vanity</span><span data-zh>Rosa 60″ White Louver Double Vanity</span></h3>
+          <div class="auto-product-meta">Louvered Front · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $488</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/grid-ash-72-floating-double-vanity.html">
+        <div class="product-link-media"><img src="images/grid-ash-72-floating-double-vanity-1.webp" alt="Grid Ash 72″ Floating Double Vanity" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>72&quot; · Wall-mounted · Ash</span><span data-zh>72&quot; · Wall-mounted · Ash</span></div>
+          <h3><span data-en>Grid Ash 72″ Floating Double Vanity</span><span data-zh>Grid Ash 72″ Floating Double Vanity</span></h3>
+          <div class="auto-product-meta">Grid Front · Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $520</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/aurelia-84-oak-double-vanity.html">
+        <div class="product-link-media"><img src="images/aurelia-84-inch-oak-double-bathroom-vanity-front.jpg" alt="84 inch oak double bathroom vanity with brass hardware and dual sinks" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>84&quot; · Freestanding · Oak</span><span data-zh>84&quot; · 落地式 · Oak</span></div>
+          <h3><span data-en>Aurelia 84″ Oak Double Vanity</span><span data-zh>Aurelia 84英寸橡木双盆浴室柜</span></h3>
+          <div class="auto-product-meta">Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $988</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/verona-grand-84-oak-double-vanity.html">
+        <div class="product-link-media"><img src="images/verona-grand-84-inch-oak-double-vanity-front.jpg" alt="84 inch oak double vanity with geometric cabinet doors and marble look top" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>84&quot; · Freestanding · Oak</span><span data-zh>84&quot; · 落地式 · Oak</span></div>
+          <h3><span data-en>Verona Grand 84″ Oak Double Vanity</span><span data-zh>Verona Grand 84英寸橡木双盆浴室柜</span></h3>
+          <div class="auto-product-meta">Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $988</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
+      <a class="product-link" href="products/solenne-84-oak-double-vanity.html">
+        <div class="product-link-media"><img src="images/solenne-84-inch-oak-double-bathroom-vanity-front.jpg" alt="modern 84 inch oak double bathroom vanity with sculpted drawers and open shelf" loading="lazy" decoding="async"></div>
+        <div class="product-link-body">
+          <div class="kicker"><span data-en>84&quot; · Freestanding · Oak</span><span data-zh>84&quot; · 落地式 · Oak</span></div>
+          <h3><span data-en>Solenne 84″ Oak Double Vanity</span><span data-zh>Solenne 84英寸橡木双盆浴室柜</span></h3>
+          <div class="auto-product-meta">Double Basin</div>
+          <div class="auto-product-footer"><span class="auto-price">From $988</span><span class="auto-view"><span data-en>View Product →</span><span data-zh>查看产品 →</span></span></div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -380,5 +484,6 @@ window.addEventListener('resize', function(){
 });
 
 </script>
+<script src="assets/featured-products.js" defer></script>
 </body>
 </html>
