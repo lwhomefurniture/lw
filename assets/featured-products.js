@@ -77,7 +77,8 @@
     return selected;
   }
 
-  fetch(collectionUrl,{cache:'no-store'})
+  function refresh(){
+    fetch(collectionUrl,{cache:'no-store'})
     .then(function(r){if(!r.ok) throw new Error('catalog '+r.status); return r.text();})
     .then(function(markup){
       var doc = new DOMParser().parseFromString(markup,'text/html');
@@ -88,4 +89,14 @@
       root.innerHTML = selected.map(function(p){return renderCard(p,group==='home'?'home':'trade');}).join('');
     })
     .catch(function(){ /* Keep the static fallback cards if the catalog cannot be fetched. */ });
+  }
+  if(group === 'home' && 'IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      if(entries.some(function(entry){return entry.isIntersecting;})){
+        observer.disconnect();
+        refresh();
+      }
+    }, {rootMargin:'300px'});
+    observer.observe(root);
+  } else refresh();
 })();
