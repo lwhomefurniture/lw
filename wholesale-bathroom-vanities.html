@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F5F1EA; --bg-deep:#EDE6D9; --ink:#26211C; --ink-soft:#5B5348;
   --wood:#8B5A3C; --wood-dark:#5C3A26; --sage:#6B7860; --line:#DCD5C6; --paper:#FBF9F4;
-  --font-display:'Fraunces',serif; --font-body:'Inter',sans-serif; --font-mono:'Space Grotesk',sans-serif;
+  --font-display:'Inter', sans-serif; --font-body:'Inter',sans-serif; --font-mono:'Space Grotesk',sans-serif;
   --container:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -29,9 +29,9 @@ img{display:block;max-width:100%}
 @media(max-width:720px){.wrap{padding:0 20px}}
 header{position:sticky;top:0;z-index:100;background:rgba(245,241,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{font-family:var(--font-display);font-size:22px;letter-spacing:.5px;font-weight:500;display:flex;align-items:baseline;gap:9px;white-space:nowrap}
-.logo-sub{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-.nav-links{display:flex;align-items:center;gap:30px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.logo{font-family:Georgia,serif;font-size:27px;letter-spacing:.5px;font-weight:500;display:flex;align-items:baseline;gap:9px;white-space:nowrap}
+.logo-sub{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.nav-links{display:flex;align-items:center;gap:30px;font-family:var(--font-mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
 .nav-links a{opacity:.76}.nav-links a:hover,.nav-links a.current{opacity:1}
 .lang-toggle{display:flex;gap:8px}
 .lang-toggle button{background:none;border:1px solid var(--line);padding:5px 10px;border-radius:20px;color:var(--ink-soft);cursor:pointer}
@@ -44,7 +44,7 @@ html[data-lang="zh"] [data-zh]{display:inline}
 .hero{padding:88px 0 72px;border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
 .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-dark);margin-bottom:16px}
-h1,h2,h3{font-family:var(--font-display);font-weight:400}
+h1,h2,h3{font-family:var(--font-display);font-weight:500}
 h1{font-size:clamp(42px,6vw,74px);line-height:1.02;letter-spacing:-.02em;max-width:12ch}
 .hero p{font-size:17px;color:var(--ink-soft);max-width:58ch;margin-top:24px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -60,7 +60,7 @@ h1{font-size:clamp(42px,6vw,74px);line-height:1.02;letter-spacing:-.02em;max-wid
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{padding:30px 26px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
-.stat strong{display:block;font-family:var(--font-display);font-size:30px;font-weight:400}
+.stat strong{display:block;font-family:var(--font-display);font-size:30px;font-weight:500}
 .stat span{display:block;margin-top:5px;color:var(--ink-soft);font-size:12px;font-family:var(--font-mono);letter-spacing:.05em;text-transform:uppercase}
 @media(max-width:760px){.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
@@ -108,8 +108,8 @@ h1{font-size:clamp(42px,6vw,74px);line-height:1.02;letter-spacing:-.02em;max-wid
 .faq-item p{font-size:14px;color:var(--ink-soft)}
 @media(max-width:760px){.faq{grid-template-columns:1fr}}
 
-.rfq{background:var(--ink);color:var(--paper);padding:78px 0;text-align:center}
-.rfq h2{font-size:clamp(32px,4vw,48px);font-style:italic}
+.rfq{background:linear-gradient(rgba(28,23,19,.72),rgba(28,23,19,.72)),url('images/cta-bathroom-banner.svg') center/cover no-repeat;color:var(--paper);padding:78px 0;text-align:center}
+.rfq h2{font-size:clamp(32px,4vw,48px);}
 .rfq p{max-width:58ch;margin:16px auto 28px;opacity:.78}
 .rfq .btn{border-color:var(--paper);color:var(--ink);background:var(--paper)}
 footer{padding:56px 0 30px}
@@ -178,7 +178,7 @@ footer{padding:56px 0 30px}
     <div class="nav-links">
       <a href="collections/bathroom-vanities.html"><span data-en>Bathroom Vanities</span><span data-zh>浴室柜</span></a>
       <a href="bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span></a>
-      <a href="wholesale-bathroom-vanities.html" class="current"><span data-en>Wholesale</span><span data-zh>批发</span></a>
+      <a href="wholesale-bathroom-vanities.html" class="current"><span data-en>Wholesale</span><span data-zh>批发</span></a><a href="about-us.html"><span data-en>About</span><span data-zh>关于我们</span></a>
       <a href="index.html#contact"><span data-en>Contact</span><span data-zh>联系</span></a>
     </div>
     
@@ -200,6 +200,7 @@ footer{padding:56px 0 30px}
   <a href="collections/bathroom-vanities.html"><span data-en>Bathroom Vanities</span><span data-zh>浴室柜</span><span class="mobile-sub">Collection</span></a>
   <a href="bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span><span class="mobile-sub">For Trade</span></a>
   <a href="wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span><span class="mobile-sub">B2B</span></a>
+  <a href="about-us.html"><span data-en>About</span><span data-zh>关于我们</span><span class="mobile-sub">Team & Factory</span></a>
   <a href="index.html#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
   <a href="index.html#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
 </div>

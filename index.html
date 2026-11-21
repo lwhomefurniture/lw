@@ -15,7 +15,7 @@
 <script>document.documentElement.classList.add('js-ready');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#F5F1EA;
@@ -28,7 +28,7 @@
     --line:#DCD5C6;
     --paper:#FBF9F4;
 
-    --font-display:'Fraunces', serif;
+    --font-display:'Inter', sans-serif;
     --font-body:'Inter', sans-serif;
     --font-mono:'Space Grotesk', sans-serif;
 
@@ -69,8 +69,8 @@
     height:76px;
   }
   .logo{
-    font-family:var(--font-display);
-    font-size:22px;
+    font-family:Georgia,serif;
+    font-size:27px;
     letter-spacing:0.5px;
     font-weight:500;
     display:flex;
@@ -80,7 +80,7 @@
   }
   .logo .logo-sub{
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     font-weight:500;
     letter-spacing:0.1em;
     text-transform:uppercase;
@@ -92,7 +92,7 @@
   .nav-links{
     display:flex; align-items:center;
     font-family:var(--font-mono);
-    font-size:13px;
+    font-size:14px;
     letter-spacing:0.06em;
     text-transform:uppercase;
   }
@@ -217,8 +217,8 @@
   }
   .hero h1{
     font-family:var(--font-display);
-    font-style:italic;
-    font-weight:400;
+    
+    font-weight:500;
     font-size:clamp(40px, 6vw, 84px);
     line-height:1.02;
     max-width:14ch;
@@ -264,7 +264,7 @@
   .swatch.soon{ cursor:default; }
   .swatch.soon:hover{ background:none; }
   .swatch-name{
-    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-family:var(--font-display); font-weight:500;
     font-size:18px; color:var(--ink);
     display:flex; flex-direction:column; gap:6px;
   }
@@ -297,7 +297,7 @@
   }
   .section-head h2{
     font-family:var(--font-display);
-    font-weight:400;
+    font-weight:500;
     font-size:clamp(30px, 3.6vw, 46px);
     max-width:16ch;
   }
@@ -335,7 +335,7 @@
   }
   .col-card h3{
     position:relative; z-index:2;
-    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-family:var(--font-display); font-weight:500;
     font-size:clamp(22px,2.4vw,32px);
   }
   .cc1{ background:repeating-linear-gradient(80deg,#7C5636,#93683F 6px,#6D4630 12px); }
@@ -373,7 +373,7 @@
     text-transform:uppercase; opacity:0.9; margin-bottom:8px;
   }
   .carousel-overlay h3{
-    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-family:var(--font-display); font-weight:500;
     font-size:clamp(28px,3.4vw,44px); margin-bottom:16px;
   }
   .carousel-cta{
@@ -458,7 +458,7 @@
     letter-spacing:0.08em; margin-bottom:16px;
   }
   .story-text h3{
-    font-family:var(--font-display); font-weight:400; font-style:italic;
+    font-family:var(--font-display); font-weight:500; 
     font-size:clamp(24px,2.6vw,34px); margin-bottom:16px; max-width:16ch;
   }
   .story-text p{ color:var(--ink-soft); max-width:42ch; font-size:15.5px; margin-bottom:20px; }
@@ -485,56 +485,13 @@
     .spec-label{ font-size:9px; }
   }
 
-  /* ============ SOCIAL SHOWCASE ============ */
-  .social-section{ padding:100px 0; border-top:1px solid var(--line); }
-  .social-grid{
-    display:grid; grid-template-columns:repeat(6, 1fr); gap:14px; margin-top:44px;
-  }
-  .social-tile{
-    position:relative; aspect-ratio:1/1; border-radius:2px; overflow:hidden;
-    background:repeating-linear-gradient(75deg,#D8C9AE,#C9B995 5px,#BBA97F 10px);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .social-tile::after{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(38,33,28,0.02), rgba(38,33,28,0.28));
-  }
-  .social-tile .platform-badge{
-    position:absolute; top:9px; right:9px; z-index:2;
-    width:24px; height:24px; border-radius:50%;
-    background:rgba(38,33,28,0.55); backdrop-filter:blur(3px);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--paper);
-  }
-  .social-tile .platform-badge svg{ width:13px; height:13px; }
-  .social-tile .tile-label{
-    position:relative; z-index:2;
-    font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase;
-    color:rgba(251,249,244,0.85); background:rgba(38,33,28,0.4);
-    padding:5px 10px; border-radius:20px;
-  }
-  .social-cta-row{
-    display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;
-  }
-  .social-btn{
-    display:inline-flex; align-items:center; gap:9px;
-    border:1px solid var(--line); padding:11px 20px; border-radius:30px;
-    font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase;
-    transition:background .2s ease, border-color .2s ease;
-  }
-  .social-btn:hover{ background:var(--bg-deep); border-color:var(--ink-soft); }
-  .social-btn svg{ width:15px; height:15px; }
-
-  @media (max-width:900px){ .social-grid{ grid-template-columns:repeat(3,1fr); } }
-  @media (max-width:560px){ .social-grid{ grid-template-columns:repeat(2,1fr); } }
-
   /* ============ CONTACT STRIP ============ */
   .contact-strip{
     background:var(--ink); color:var(--paper);
     padding:80px 0; text-align:center;
   }
   .contact-strip h2{
-    font-family:var(--font-display); font-style:italic; font-weight:400;
+    font-family:var(--font-display); font-weight:500;
     font-size:clamp(28px,3.4vw,44px); margin-bottom:20px;
   }
   .contact-strip p{ opacity:0.75; max-width:44ch; margin:0 auto 30px; }
@@ -672,9 +629,7 @@
     color:#FBF9F4;
   }
   .contact-image-content h2{
-    font-family:var(--font-display);
-    font-style:italic;
-    font-weight:400;
+    font-family:var(--font-display); font-weight:500;
     font-size:clamp(32px,4vw,52px);
     line-height:1.08;
     margin-bottom:14px;
@@ -747,7 +702,7 @@
     text-transform:uppercase; color:var(--wood-dark); margin-bottom:8px;
   }
   .featured-link-card h3{
-    font-family:var(--font-display); font-weight:400; font-size:21px; line-height:1.25; margin-bottom:8px;
+    font-family:var(--font-display); font-weight:500; font-size:21px; line-height:1.25; margin-bottom:8px;
   }
   .auto-product-meta{font-size:12.5px;color:var(--ink-soft);min-height:20px}
   .auto-product-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
@@ -790,8 +745,8 @@
       </div>
       <a href="bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span></a>
       <a href="wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span></a>
+      <a href="about-us.html"><span data-en>About</span><span data-zh>关于我们</span></a>
       <a href="#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
-      <a href="#about"><span data-en>About</span><span data-zh>关于我们</span></a>
       <a href="#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
     </div>
     
@@ -813,6 +768,7 @@
   <a href="collections/bathroom-vanities.html"><span data-en>Bathroom Vanities</span><span data-zh>浴室柜</span><span class="mobile-sub">Collection</span></a>
   <a href="bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span><span class="mobile-sub">For Trade</span></a>
   <a href="wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span><span class="mobile-sub">B2B</span></a>
+  <a href="about-us.html"><span data-en>About</span><span data-zh>关于我们</span><span class="mobile-sub">Team & Factory</span></a>
   <a href="index.html#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
   <a href="index.html#contact"><span data-en>Contact</span><span data-zh>联系我们</span></a>
 </div>
@@ -1092,56 +1048,6 @@
   </div>
 </section>
 
-<section class="section social-section" id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="section-eyebrow"><span data-en>Follow Along</span><span data-zh>关注我们</span></div>
-        <h2><span data-en>Workshop notes, on Instagram and TikTok.</span><span data-zh>工坊日常，更新在 Instagram 和 TikTok。</span></h2>
-      </div>
-      <p><span data-en>Behind-the-scenes production, new arrivals, and finished pieces — posted as they happen.</span><span data-zh>生产幕后花絮、新品上架、成品实拍 —— 随时更新。</span></p>
-    </div>
-
-    <div class="social-grid">
-      <div class="social-tile">
-        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div>
-        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
-      </div>
-      <div class="social-tile">
-        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg></div>
-        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
-      </div>
-      <div class="social-tile">
-        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div>
-        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
-      </div>
-      <div class="social-tile">
-        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg></div>
-        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
-      </div>
-      <div class="social-tile">
-        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></div>
-        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
-      </div>
-      <div class="social-tile">
-        <div class="platform-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg></div>
-        <div class="tile-label"><span data-en>Post coming soon</span><span data-zh>内容待更新</span></div>
-      </div>
-    </div>
-
-    <div class="social-cta-row">
-      <a href="#" class="social-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-        <span data-en>Follow on Instagram</span><span data-zh>关注 Instagram</span>
-      </a>
-      <a href="#" class="social-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c0 2.4 1.9 4.3 4.3 4.4v3.1c-1.6 0-3.1-.5-4.3-1.4v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.8 2.4V2h3z"/></svg>
-        <span data-en>Follow on TikTok</span><span data-zh>关注 TikTok</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <section class="contact-strip contact-image-strip" id="contact">
   <img src="images/footer-bathroom-banner.jpg" alt="Warm wood bathroom interior with wall-mounted vanity and illuminated mirror">
   <div class="contact-image-overlay">
@@ -1176,8 +1082,8 @@
         <h4><span data-en>Company</span><span data-zh>公司</span></h4>
         <a href="bathroom-vanity-manufacturer.html"><span data-en>Manufacturer</span><span data-zh>制造商</span></a>
         <a href="wholesale-bathroom-vanities.html"><span data-en>Wholesale</span><span data-zh>批发</span></a>
+        <a href="about-us.html"><span data-en>About Us</span><span data-zh>关于我们</span></a>
         <a href="#craft"><span data-en>Craft</span><span data-zh>工艺</span></a>
-        <a href="#about"><span data-en>About Us</span><span data-zh>关于我们</span></a>
       </div>
       <div class="footer-col">
         <h4><span data-en>Contact</span><span data-zh>联系方式</span></h4>

@@ -13,12 +13,12 @@
 <script>document.documentElement.classList.add('js-ready');</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --bg:#F5F1EA; --bg-deep:#EDE6D9; --ink:#26211C; --ink-soft:#5B5348;
     --wood:#8B5A3C; --wood-dark:#5C3A26; --sage:#6B7860; --line:#DCD5C6; --paper:#FBF9F4;
-    --font-display:'Fraunces', serif; --font-body:'Inter', sans-serif; --font-mono:'Space Grotesk', sans-serif;
+    --font-display:'Inter', sans-serif; --font-body:'Inter', sans-serif; --font-mono:'Space Grotesk', sans-serif;
     --container: 1320px;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -37,10 +37,10 @@
   /* ============ NAV (shared) ============ */
   header{ position:sticky; top:0; z-index:100; background:rgba(245,241,234,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; max-width:1240px; }
-  .logo{ font-family:var(--font-display); font-size:22px; letter-spacing:0.5px; font-weight:500; display:flex; align-items:baseline; gap:9px; white-space:nowrap; }
-  .logo .logo-sub{ font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); }
+  .logo{ font-family:Georgia,serif; font-size:27px; letter-spacing:0.5px; font-weight:500; display:flex; align-items:baseline; gap:9px; white-space:nowrap; }
+  .logo .logo-sub{ font-family:var(--font-mono); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); }
   @media (max-width:520px){ .logo .logo-sub{ display:none; } }
-  .nav-links{ display:flex; align-items:center; font-family:var(--font-mono); font-size:13px; letter-spacing:0.06em; text-transform:uppercase; }
+  .nav-links{ display:flex; align-items:center; font-family:var(--font-mono); font-size:14px; letter-spacing:0.06em; text-transform:uppercase; }
   .nav-item{ position:relative; margin-left:36px; }
   .nav-item:first-child{ margin-left:0; }
   .nav-links > a{ opacity:0.78; transition:opacity .2s; margin-left:36px; }
@@ -76,7 +76,7 @@
   .breadcrumb{ font-family:var(--font-mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px; }
   .breadcrumb a{ opacity:0.7; }
   .breadcrumb a:hover{ opacity:1; text-decoration:underline; }
-  .page-hero h1{ font-family:var(--font-display); font-style:italic; font-weight:400; font-size:clamp(30px, 4vw, 48px); max-width:16ch; margin-bottom:10px; }
+  .page-hero h1{ font-family:var(--font-display); font-weight:500; font-size:clamp(30px, 4vw, 48px); max-width:16ch; margin-bottom:10px; }
   .page-hero p{ color:var(--ink-soft); max-width:56ch; font-size:15px; }
 
   /* ============ LAYOUT: SIDEBAR + GRID ============ */
@@ -128,7 +128,7 @@
     font-family:var(--font-mono); font-size:10px; letter-spacing:0.05em; text-transform:uppercase;
     background:var(--ink); color:var(--paper); padding:4px 9px; border-radius:20px;
   }
-  .product-name{ font-family:var(--font-display); font-style:italic; font-weight:400; font-size:18.5px; margin-bottom:5px; }
+  .product-name{ font-family:var(--font-display); font-weight:500; font-size:18.5px; margin-bottom:5px; }
   .product-spec{ font-size:12.5px; color:var(--ink-soft); margin-bottom:9px; }
   .product-tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:9px; }
   .product-tags span{
@@ -300,8 +300,9 @@
 </div>
 <a href="../bathroom-vanity-manufacturer.html"><span data-en="">Manufacturer</span><span data-zh="">制造商</span></a>
 <a href="../wholesale-bathroom-vanities.html"><span data-en="">Wholesale</span><span data-zh="">批发</span></a>
+<a href="../about-us.html"><span data-en="">About</span><span data-zh="">关于我们</span></a>
 <a href="../index.html#craft"><span data-en="">Craft</span><span data-zh="">工艺</span></a>
-<a href="../index.html#about"><span data-en="">About</span><span data-zh="">关于我们</span></a>
+<a href="../about-us.html"><span data-en="">About</span><span data-zh="">关于我们</span></a>
 <a href="../index.html#contact"><span data-en="">Contact</span><span data-zh="">联系我们</span></a>
 </div>
 <button aria-expanded="false" aria-label="Open menu" class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" type="button">
@@ -320,6 +321,7 @@
 <a href="../collections/bathroom-vanities.html"><span data-en="">Bathroom Vanities</span><span data-zh="">浴室柜</span><span class="mobile-sub">Collection</span></a>
 <a href="../bathroom-vanity-manufacturer.html"><span data-en="">Manufacturer</span><span data-zh="">制造商</span><span class="mobile-sub">For Trade</span></a>
 <a href="../wholesale-bathroom-vanities.html"><span data-en="">Wholesale</span><span data-zh="">批发</span><span class="mobile-sub">B2B</span></a>
+<a href="../about-us.html"><span data-en="">About</span><span data-zh="">关于我们</span><span class="mobile-sub">Team & Factory</span></a>
 <a href="../index.html#craft"><span data-en="">Craft</span><span data-zh="">工艺</span></a>
 <a href="../index.html#contact"><span data-en="">Contact</span><span data-zh="">联系我们</span></a>
 </div>
@@ -755,7 +757,8 @@
 <div class="product-tags"><span>Double Basin</span><span>Curved Doors</span></div>
 <div class="product-price"><span class="from">From</span> $255</div><div class="product-moq"><span data-en="">MOQ: 20 units</span><span data-zh="">起订量：20台</span></div></a>
 </div>
-<div style="margin:0 0 26px;padding:18px 20px;background:var(--paper);border:1px solid var(--line);"><strong>Choosing a size?</strong> <a href="../guides/bathroom-vanity-size-guide.html" style="text-decoration:underline;text-underline-offset:3px;">Read our Bathroom Vanity Size Guide →</a></div>\n<div class="empty-state" id="emptyState">
+<div style="margin:0 0 26px;padding:18px 20px;background:var(--paper);border:1px solid var(--line);"><strong>Choosing a size?</strong> <a href="../guides/bathroom-vanity-size-guide.html" style="text-decoration:underline;text-underline-offset:3px;">Read our Bathroom Vanity Size Guide →</a></div>
+<div class="empty-state" id="emptyState">
 <span data-en="">No vanities match the selected filters.</span><span data-zh="">没有符合当前筛选条件的产品。</span>
 </div>
 </div>
@@ -777,7 +780,7 @@
 <div class="footer-col">
 <h4><span data-en="">Company</span><span data-zh="">公司</span></h4>
 <a href="../index.html#craft"><span data-en="">Craft</span><span data-zh="">工艺</span></a>
-<a href="../index.html#about"><span data-en="">About Us</span><span data-zh="">关于我们</span></a>
+<a href="../about-us.html"><span data-en="">About Us</span><span data-zh="">关于我们</span></a>
 </div>
 <div class="footer-col">
 <h4><span data-en="">Contact</span><span data-zh="">联系方式</span></h4>
