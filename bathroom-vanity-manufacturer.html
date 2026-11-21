@@ -23,12 +23,12 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F5F1EA; --bg-deep:#EDE6D9; --ink:#26211C; --ink-soft:#5B5348;
   --wood:#8B5A3C; --wood-dark:#5C3A26; --sage:#6B7860; --line:#DCD5C6; --paper:#FBF9F4;
-  --font-display:'Fraunces',serif; --font-body:'Inter',sans-serif; --font-mono:'Space Grotesk',sans-serif;
+  --font-display:'Inter', sans-serif; --font-body:'Inter',sans-serif; --font-mono:'Space Grotesk',sans-serif;
   --container:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -41,7 +41,7 @@ button{font-family:inherit}
 @media(max-width:720px){.wrap{padding:0 20px}}
 header{position:sticky;top:0;z-index:100;background:rgba(245,241,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{font-family:var(--font-display);font-size:27px;letter-spacing:.5px;font-weight:500;display:flex;align-items:baseline;gap:9px;white-space:nowrap}
+.logo{font-family:Georgia,serif;font-size:27px;letter-spacing:.5px;font-weight:500;display:flex;align-items:baseline;gap:9px;white-space:nowrap}
 .logo-sub{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .nav-links{display:flex;align-items:center;gap:32px;font-family:var(--font-mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
 .nav-links a{opacity:.76}
@@ -57,7 +57,7 @@ html[data-lang="zh"] [data-zh]{display:inline}
 .hero{padding:92px 0 78px;border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:68px;align-items:center}
 .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--wood-dark);margin-bottom:16px}
-h1,h2,h3{font-family:var(--font-display);font-weight:400}
+h1,h2,h3{font-family:var(--font-display);font-weight:500}
 h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.02em;max-width:12ch}
 .hero p{font-size:17px;color:var(--ink-soft);max-width:58ch;margin-top:24px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -73,7 +73,7 @@ h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.02em;max-wid
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{padding:30px 26px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
-.stat strong{display:block;font-family:var(--font-display);font-size:30px;font-weight:400}
+.stat strong{display:block;font-family:var(--font-display);font-size:30px;font-weight:500}
 .stat span{display:block;margin-top:5px;color:var(--ink-soft);font-size:12px;font-family:var(--font-mono);letter-spacing:.05em;text-transform:uppercase}
 @media(max-width:760px){.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
@@ -94,7 +94,7 @@ h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.02em;max-wid
 
 .cert-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
 .cert{border:1px solid var(--line);background:var(--bg);padding:18px;text-align:center}
-.cert strong{display:block;font-family:var(--font-display);font-size:20px;font-weight:400}
+.cert strong{display:block;font-family:var(--font-display);font-size:20px;font-weight:500}
 .cert span{font-size:12px;color:var(--ink-soft)}
 @media(max-width:700px){.cert-row{grid-template-columns:1fr 1fr}}
 
@@ -123,7 +123,7 @@ h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.02em;max-wid
 @media(max-width:760px){.product-links{grid-template-columns:1fr}}
 
 .rfq{background:var(--ink);color:var(--paper);padding:80px 0;text-align:center}
-.rfq h2{font-size:clamp(32px,4vw,48px);font-style:italic}
+.rfq h2{font-size:clamp(32px,4vw,48px);}
 .rfq p{max-width:58ch;margin:16px auto 28px;opacity:.78}
 .rfq .btn{border-color:var(--paper);color:var(--ink);background:var(--paper)}
 footer{padding:56px 0 30px}
