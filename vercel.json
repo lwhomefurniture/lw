@@ -1,0 +1,147 @@
+{
+  "redirects": [
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "10"
+        }
+      ],
+      "destination": "/products/lumina-84-ash-double-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "11"
+        }
+      ],
+      "destination": "/products/provence-84-teak-double-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "01"
+        }
+      ],
+      "destination": "/products/wave-rattan-36-oak-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "02"
+        }
+      ],
+      "destination": "/products/ripple-oak-24-bathroom-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "03"
+        }
+      ],
+      "destination": "/products/onyx-ring-30-black-bathroom-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "04"
+        }
+      ],
+      "destination": "/products/lucia-36-black-rattan-shelf-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "05"
+        }
+      ],
+      "destination": "/products/willow-grove-60-ash-double-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "06"
+        }
+      ],
+      "destination": "/products/haven-60-walnut-double-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "07"
+        }
+      ],
+      "destination": "/products/camden-30-walnut-farmhouse-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "08"
+        }
+      ],
+      "destination": "/products/sonoma-grand-84-oak-double-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "09"
+        }
+      ],
+      "destination": "/products/malibu-60-white-double-vanity.html",
+      "permanent": true
+    },
+    {
+      "source": "/product.html",
+      "missing": [
+        {
+          "type": "query",
+          "key": "id"
+        }
+      ],
+      "destination": "/products/wave-rattan-36-oak-vanity.html",
+      "permanent": true
+    }
+  ]
+}

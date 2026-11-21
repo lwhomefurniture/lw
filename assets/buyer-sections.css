@@ -1,0 +1,9 @@
+.buyer-section {padding: 2.5rem 0; border-top: 1px solid #d9d1c5;}
+.buyer-section h2 {margin: 0 0 .8rem; font-size: clamp(1.45rem,3vw,2.1rem);}
+.buyer-section p {margin: .4rem 0 1rem; max-width: 72ch; line-height: 1.6;}
+.buyer-options {display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,210px),1fr)); gap: 1.25rem;}
+.buyer-options a {display: block; border-bottom: 1px solid #b9ad9d; padding: .65rem 0; color: inherit; text-decoration: none;}
+.buyer-options a:hover,.buyer-options a:focus-visible,.buyer-section p a {text-decoration: underline;}
+.buyer-options img {width:100%; aspect-ratio:4/3; object-fit:cover; display:block; margin-bottom:.75rem;}
+.buyer-options small {display:block; margin-top:.35rem; line-height:1.5;}
+#woven-front {scroll-margin-top:6rem;}
