@@ -18,7 +18,7 @@
   :root{
     --bg:#F5F1EA; --bg-deep:#EDE6D9; --ink:#26211C; --ink-soft:#5B5348;
     --wood:#8B5A3C; --wood-dark:#5C3A26; --sage:#6B7860; --line:#DCD5C6; --paper:#FBF9F4;
-    --font-display:'Fraunces', serif; --font-body:'Inter', sans-serif; --font-mono:'Space Grotesk', sans-serif;
+    --font-display:'Inter', sans-serif; --font-body:'Inter', sans-serif; --font-mono:'Space Grotesk', sans-serif;
     --container: 1320px;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -37,7 +37,7 @@
   /* ============ NAV (shared) ============ */
   header{ position:sticky; top:0; z-index:100; background:rgba(245,241,234,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; max-width:1240px; }
-  .logo{ font-family:var(--font-display); font-size:27px; letter-spacing:0.5px; font-weight:500; display:flex; align-items:baseline; gap:9px; white-space:nowrap; }
+  .logo{ font-family:Georgia,serif; font-size:27px; letter-spacing:0.5px; font-weight:500; display:flex; align-items:baseline; gap:9px; white-space:nowrap; }
   .logo .logo-sub{ font-family:var(--font-mono); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); }
   @media (max-width:520px){ .logo .logo-sub{ display:none; } }
   .nav-links{ display:flex; align-items:center; font-family:var(--font-mono); font-size:14px; letter-spacing:0.06em; text-transform:uppercase; }
@@ -76,7 +76,7 @@
   .breadcrumb{ font-family:var(--font-mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px; }
   .breadcrumb a{ opacity:0.7; }
   .breadcrumb a:hover{ opacity:1; text-decoration:underline; }
-  .page-hero h1{ font-family:var(--font-display); font-style:italic; font-weight:400; font-size:clamp(30px, 4vw, 48px); max-width:16ch; margin-bottom:10px; }
+  .page-hero h1{ font-family:var(--font-display); font-weight:500; font-size:clamp(30px, 4vw, 48px); max-width:16ch; margin-bottom:10px; }
   .page-hero p{ color:var(--ink-soft); max-width:56ch; font-size:15px; }
 
   /* ============ LAYOUT: SIDEBAR + GRID ============ */
@@ -128,7 +128,7 @@
     font-family:var(--font-mono); font-size:10px; letter-spacing:0.05em; text-transform:uppercase;
     background:var(--ink); color:var(--paper); padding:4px 9px; border-radius:20px;
   }
-  .product-name{ font-family:var(--font-display); font-style:italic; font-weight:400; font-size:18.5px; margin-bottom:5px; }
+  .product-name{ font-family:var(--font-display); font-weight:500; font-size:18.5px; margin-bottom:5px; }
   .product-spec{ font-size:12.5px; color:var(--ink-soft); margin-bottom:9px; }
   .product-tags{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:9px; }
   .product-tags span{
