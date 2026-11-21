@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const contact=Array.from(nav.querySelectorAll('a')).find(a=>/contact/i.test(a.textContent));
     const about=document.createElement('a');
     about.href='../about-us.html';
-    about.textContent='About';
+    about.innerHTML='<span data-en>About</span><span data-zh>关于我们</span>'; 
     if(contact) nav.insertBefore(about,contact);
     else if(wholesale && wholesale.nextSibling) nav.insertBefore(about,wholesale.nextSibling);
     else nav.appendChild(about);
